@@ -1,6 +1,6 @@
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen px-6 py-16 md:px-12 lg:px-32 bg-slate-950 text-slate-50">
+    <main className="min-h-screen px-6 py-16 md:px-12 lg:px-32 bg-highlight text-slate-50">
       <section className="max-w-5xl mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold mb-6">Projects</h1>
         <p className="text-slate-300 mb-10">

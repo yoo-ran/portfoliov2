@@ -4,26 +4,294 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --beige: 237 229 218;
+  --beige-70: 237 229 218;
+  --black: 24 24 23;
+  --highlight: 78 113 161;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* === COLOR === */
+  --color-beige: var(--beige);
+  --color-black: var(--black);
+  --color-highlight: rgb(var(--highlight));
+
+  /* === BORDER RADIUS  === */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.375rem; /* 6px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+  --radius-2xl: 1.25rem; /* 20px */
+  --radius-full: 9999px; /* full pill/round */
+
+  /* === RADIUS TOKENS (MOBILE BASE) === */
+  --radius-btn: 0.375rem; /* pill on mobile */
+  --radius-card: 0.375rem; /* 6px */
+  --radius-chip: 0.25rem; /* 4px */
+
+  /* === BUTTON PADDING TOKENS (MOBILE BASE) === */
+  --btn-px: 1rem; /* 16px horizontal */
+  --btn-py: 0.5rem; /* 8px vertical */
+
+  /* === CARD PADDING TOKENS === */
+  --card-p: 1rem; /* 16px */
+
+  /* === CHIP SIZE TOKENS === */
+  --chip-px: 0.75rem; /* 12px */
+  --chip-py: 0.25rem; /* 4px */
+
+  /* === FONT FAMILY === */
+  --font-body: var(--font-inter);
+  --font-title: var(--font-titillium);
+  --font-label: var(--font-abel);
+
+  /* === MOBILE (default) === */
+  /* Header Title · 36/72 */
+  --text-header-title: 2.25rem; /* 36px */
+  --leading-header-title: 4.5rem; /* 72px */
+
+  /* H1 · 28/36 */
+  --text-h1: 1.75rem; /* 28px */
+  --leading-h1: 2.25rem; /* 36px */
+
+  /* H2 · 22/30 */
+  --text-h2: 1.375rem; /* 22px */
+  --leading-h2: 1.875rem; /* 30px */
+
+  /* H3 · 18/26 */
+  --text-h3: 1.125rem; /* 18px */
+  --leading-h3: 1.625rem; /* 26px */
+
+  /* Subtitle1 · 16/24 */
+  --text-subtitle1: 1rem; /* 16px */
+  --leading-subtitle1: 1.5rem; /* 24px */
+
+  /* Body1 · 14/22 */
+  --text-body1: 0.875rem; /* 14px */
+  --leading-body1: 1.375rem; /* 22px */
+
+  /* Body2 · 12/20 */
+  --text-body2: 0.75rem; /* 12px */
+  --leading-body2: 1.25rem; /* 20px */
+
+  /* Button · 14/20 */
+  --text-button: 0.875rem; /* 14px */
+  --leading-button: 1.25rem; /* 20px */
+
+  /* Tech Btn · 10/22 */
+  --text-tech-btn: 0.625rem; /* 10px */
+  --leading-tech-btn: 1.375rem; /* 22px */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--black);
+    --foreground: var(--beige);
+  }
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+  @theme {
+    --radius-btn: 1.25rem;
+    --radius-card: 1.25rem;
+
+    --btn-px: 1.25rem; /* 20px */
+    --btn-py: 0.75rem; /* 12px */
+
+    --card-p: 1.25rem; /* 20px */
+
+    --chip-px: 1rem;
+    --chip-py: 0.375rem;
+
+    --text-header-title: 3rem; /* 40px */
+    --leading-header-title: 4.5rem; /* 72px */
+
+    --text-h1: 2rem; /* 32px */
+    --leading-h1: 2.75rem; /* 44px */
+
+    --text-h2: 1.75rem; /* 28px */
+    --leading-h2: 2.25rem; /* 36px */
+
+    --text-h3: 1.25rem; /* 20px */
+    --leading-h3: 1.75rem; /* 28px */
+
+    --text-subtitle1: 1.125rem; /* 18px */
+    --leading-subtitle1: 1.625rem; /* 24px */
+
+    --text-body1: 0.875rem; /* 14px */
+    --leading-body1: 1.375rem; /* 22px */
+
+    --text-body2: 0.75rem; /* 12px */
+    --leading-body2: 1.25rem; /* 20px */
+
+    --text-button: 0.875rem; /* 14px */
+    --leading-button: 1.25rem; /* 20px */
+
+    --text-tech-btn: 0.75rem; /* 10px */
+    --leading-tech-btn: 1.375rem; /* 22px */
+  }
+}
+
+/* EXPANDED TABLET */
+@media (min-width: 1280px) {
+  @theme {
+    --radius-btn: 1.5rem;
+    --radius-card: 1.5rem;
+
+    --btn-px: 1.5rem;
+    --btn-py: 0.75rem;
+
+    --card-p: 1.5rem;
+
+    --chip-px: 1rem;
+    --chip-py: 0.5rem;
+
+    --text-header-title: 4rem; /* 64px */
+    --leading-header-title: 4.5rem; /* 72px */
+
+    --text-h1: 3rem; /* 48px */
+    --leading-h1: 3.5rem; /* 56px */
+
+    --text-h2: 2.25rem; /* 36px */
+    --leading-h2: 2.25rem; /* 44px */
+
+    --text-h3: 1.5rem; /* 24px */
+    --leading-h3: 2rem; /* 32px */
+
+    --text-subtitle1: 1.25rem; /* 20px */
+    --leading-subtitle1: 1.75rem; /* 28px */
+
+    --text-body1: 1rem; /* 16px */
+    --leading-body1: 1.5rem; /* 24px */
+
+    --text-body2: 0.75rem; /* 14px */
+    --leading-body2: 1.25rem; /* 20px */
+
+    --text-button: 1rem; /* 16px */
+    --leading-button: 1.25rem; /* 20px */
+
+    --text-tech-btn: 0.625rem; /* 10px */
+    --leading-tech-btn: 1.375rem; /* 22px */
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1728px) {
+  @theme {
+    --radius-btn: 1.75rem;
+    --radius-card: 1.75rem;
+
+    --btn-px: 1.75rem;
+    --btn-py: 0.875rem;
+
+    --card-p: 1.75rem;
+
+    --chip-px: 1.25rem;
+    --chip-py: 0.5rem;
+
+    --text-header-title: 4rem; /* 64px */
+    --leading-header-title: 4.5rem; /* 72px */
+
+    --text-h1: 3rem; /* 64px */
+    --leading-h1: 3.5rem; /* 72px */
+
+    --text-h2: 2.25rem; /* 48px */
+    --leading-h2: 2.25rem; /* 56px */
+
+    --text-h3: 1.5rem; /* 28px */
+    --leading-h3: 2rem; /* 36px */
+
+    --text-subtitle1: 1.25rem; /* 24px */
+    --leading-subtitle1: 1.75rem; /* 30px */
+
+    --text-body1: 1rem; /* 18px */
+    --leading-body1: 1.5rem; /* 30px */
+
+    --text-body2: 0.75rem; /* 16px */
+    --leading-body2: 1.25rem; /* 26px */
+
+    --text-button: 1rem; /* 20px */
+    --leading-button: 1.25rem; /* 20px */
+
+    --text-tech-btn: 0.75rem; /* 12px */
+    --leading-tech-btn: 1.375rem; /* 22px */
+  }
+}
+
+@layer components {
+  /* ---------------- BUTTON ---------------- */
+  .ui-btn {
+    border-radius: var(--radius-btn);
+    padding: var(--btn-py) var(--btn-px);
+    @apply inline-flex items-center justify-center gap-2 
+           ty-button bg-highlight text-foreground transition-colors duration-200;
+  }
+
+  .ui-btn--outline {
+    @apply ui-btn border border-foreground/30 bg-transparent text-foreground;
+  }
+
+  /* ---------------- CARD ---------------- */
+  .ui-card {
+    border-radius: var(--radius-card);
+    padding: var(--card-p);
+    @apply bg-background text-foreground shadow-sm border border-foreground/10;
+  }
+
+  /* ---------------- CHIP ---------------- */
+  .ui-chip {
+    border-radius: var(--radius-chip);
+    padding: var(--chip-py) var(--chip-px);
+    @apply inline-flex items-center gap-2 text-body2 bg-highlight/10 text-highlight;
+  }
+
+  .ty-header-title {
+    @apply font-title font-bold text-header-title leading-header-title tracking-tight;
+  }
+
+  .ty-h1 {
+    @apply font-title font-semibold text-h1 leading-h1 tracking-tight;
+  }
+
+  .ty-h2 {
+    @apply font-title font-semibold text-h2 leading-h2;
+  }
+
+  .ty-h3 {
+    @apply font-title font-medium text-h3 leading-h3;
+  }
+
+  .ty-subtitle1 {
+    @apply font-sans font-medium text-subtitle1 leading-subtitle1;
+  }
+
+  .ty-body1 {
+    @apply font-sans font-normal text-body1 leading-body1;
+  }
+
+  .ty-body2 {
+    @apply font-sans font-normal text-body2 leading-body2;
+  }
+
+  .ty-button {
+    @apply font-label font-semibold uppercase tracking-wide text-button leading-button;
+  }
+
+  .ty-tech-btn {
+    @apply font-mono font-medium text-tech-btn leading-tech-btn;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: rgb(var(--beige));
+  color: rgb(var(--black));
+  font-family: var(
+    --font-body,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif
+  );
 }
