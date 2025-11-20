@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter, Abel, Titillium_Web } from 'next/font/google';
 import './globals.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 // Main sans-serif (body)
 const inter = Inter({
@@ -40,10 +42,13 @@ export default function RootLayout({
           ${titillium.variable}
           ${abel.variable}
           antialiased
+          w-full
+          flex flex-col justify-center items-center
         `}
       >
-        {' '}
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
