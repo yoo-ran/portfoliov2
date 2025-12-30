@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Shrikhand&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
 @import 'tailwindcss';
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 :root {
   --beige: 237 229 218;
-  --beige-70: 237 229 218;
   --black: 24 24 23;
   --highlight: 78 113 161;
 
@@ -48,10 +49,10 @@
 }
 
 @theme inline {
-  /* === COLOR === */
+  /* semantic tokens */
   --color-beige: var(--beige);
   --color-black: var(--black);
-  --color-highlight: rgb(var(--highlight));
+  --color-highlight: var(--highlight);
 
   /* === BORDER RADIUS  === */
   --radius-sm: 0.25rem; /* 4px */
@@ -78,9 +79,10 @@
   --chip-py: 0.25rem; /* 4px */
 
   /* === FONT FAMILY === */
-  --font-title: var(--font-titillium);
-  --font-body: var(--font-inter);
-  --font-label: var(--font-abel);
+  --font-title: 'Titillium Web', sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui;
+  --font-label: 'Abel', sans-serif;
+  --font-logo: 'Shrikhand', serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -230,6 +232,10 @@
 
   .flexCol {
     @apply flex flex-col justify-center items-start;
+  }
+
+  .flexRow {
+    @apply flex justify-between items-center;
   }
 
   .--outline {

@@ -9,10 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        beige: 'rgb(var(--beige) / <alpha-value>)',
-        beige70: 'rgb(var(--beige-70) / <alpha-value>)',
-        black: 'rgb(var(--black) / <alpha-value>)',
-        highlight: 'rgb(var(--highlight) / <alpha-value>)',
+        beige: 'rgb(var(--color-beige) / <alpha-value>)',
+        black: 'rgb(var(--color-black) / <alpha-value>)',
+        highlight: 'rgb(var(--color-highlight) / <alpha-value>)',
+      },
+      fontFamily: {
+        body: ['var(--font-body)'],
+        title: ['var(--font-title)'],
+        label: ['var(--font-label)'],
+        logo: ['var(--font-logo)'],
+      },
+      borderRadius: {
+        sm: 'var(--radius-sm)',
+        md: 'var(--radius-md)',
+        lg: 'var(--radius-lg)',
+        xl: 'var(--radius-xl)',
+        '2xl': 'var(--radius-2xl)',
+        full: 'var(--radius-full)',
       },
     },
   },
