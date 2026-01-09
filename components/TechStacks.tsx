@@ -1,7 +1,13 @@
+import TechStacksCard from './ui/TechStackCard';
+import { SKILL_CARDS } from '@/lib/skills-data';
+
 export default function TechStacks() {
   return (
-    <div className="flexCol w-full h-screen dark:bg-black">
-      <main className="flexCol border w-full dark:bg-black">TechStacks</main>
-    </div>
+    <section className="flexCol gap-y-3 w-full dark:bg-black">
+      <h2 className="ty-h2">Tech Stacks</h2>
+      {SKILL_CARDS.map((card) => (
+        <TechStacksCard key={card.title} data={card} />
+      ))}
+    </section>
   );
 }

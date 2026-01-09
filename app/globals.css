@@ -271,7 +271,7 @@
   }
 
   .ty-h3 {
-    @apply font-title font-bold;
+    @apply font-title font-semibold;
     font-size: var(--text-h3);
     line-height: var(--leading-h3);
   }
