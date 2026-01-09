@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Shrikhand&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
-
 @import 'tailwindcss';
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
+@config "../tailwind.config.ts";
 
 :root {
   --beige: 237 229 218;
@@ -49,11 +46,6 @@
 }
 
 @theme inline {
-  /* semantic tokens */
-  --color-beige: var(--beige);
-  --color-black: var(--black);
-  --color-highlight: var(--highlight);
-
   /* === BORDER RADIUS  === */
   --radius-sm: 0.25rem; /* 4px */
   --radius-md: 0.375rem; /* 6px */
@@ -106,7 +98,7 @@
     --chip-px: 1rem;
     --chip-py: 0.375rem;
 
-    --text-header-title: 3rem; /* 40px */
+    --text-header-title: 3rem; /* 48px */
     --leading-header-title: 4.5rem; /* 72px */
 
     --text-h1: 2rem; /* 32px */
@@ -127,7 +119,7 @@
     --text-body2: 0.75rem; /* 12px */
     --leading-body2: 1.25rem; /* 20px */
 
-    --text-button: 0.875rem; /* 14px */
+    --text-button: 1.125rem; /* 18px */
     --leading-button: 1.25rem; /* 20px */
 
     --text-tech-btn: 0.75rem; /* 10px */
@@ -149,7 +141,7 @@
     --chip-px: 1rem;
     --chip-py: 0.5rem;
 
-    --text-header-title: 4rem; /* 64px */
+    --text-header-title: 4.5rem; /* 72px */
     --leading-header-title: 4.5rem; /* 72px */
 
     --text-h1: 3rem; /* 48px */
@@ -170,7 +162,7 @@
     --text-body2: 0.75rem; /* 14px */
     --leading-body2: 1.25rem; /* 20px */
 
-    --text-button: 1rem; /* 16px */
+    --text-button: 1.5rem; /* 24px */
     --leading-button: 1.25rem; /* 20px */
 
     --text-tech-btn: 0.825rem; /* 10px */
@@ -192,7 +184,7 @@
     --chip-px: 1.25rem;
     --chip-py: 0.5rem;
 
-    --text-header-title: 4rem; /* 64px */
+    --text-header-title: 6rem; /* 96px */
     --leading-header-title: 4.5rem; /* 72px */
 
     --text-h1: 3rem; /* 64px */
@@ -213,7 +205,7 @@
     --text-body2: 0.75rem; /* 16px */
     --leading-body2: 1.25rem; /* 26px */
 
-    --text-button: 1rem; /* 20px */
+    --text-button: 2rem; /* 20px */
     --leading-button: 1.25rem; /* 20px */
 
     --text-tech-btn: 0.85rem; /* 12px */
@@ -246,14 +238,14 @@
   .ui-card {
     border-radius: var(--radius-card);
     padding: var(--card-p);
-    @apply bg-beige  shadow-sm border border-black/10;
+    @apply shadow-sm border border-black/10;
   }
 
   /* ---------------- CHIP ---------------- */
   .ui-chip {
     border-radius: var(--radius-chip);
     padding: var(--chip-py) var(--chip-px);
-    @apply inline-flex items-center gap-2 bg-highlight/10 text-highlight;
+    @apply inline-flex items-center gap-2;
   }
 
   /* ---------------- Font ---------------- */
@@ -264,7 +256,6 @@
   .ty-header-title {
     @apply font-title font-bold tracking-tight;
     font-size: var(--text-header-title);
-    line-height: var(--leading-header-title);
   }
 
   .ty-h1 {
@@ -304,7 +295,7 @@
   }
 
   .ty-button {
-    @apply font-body font-semibold uppercase tracking-wide;
+    @apply font-body;
     font-size: var(--text-button);
     line-height: var(--leading-button);
   }

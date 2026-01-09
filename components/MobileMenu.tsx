@@ -1,5 +1,4 @@
 'use client';
-import { useState } from 'react';
 
 type MobileMenuProps = {
   open: boolean;
@@ -10,7 +9,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
   return (
     <div
       id="mobileMenu"
-      className={`fixed flexCol justify-between top-0 right-0 z-50 h-full w-full bg-white p-6 shadow-lg  md:hidden transform transition-transform duration-300 ease-in-out
+      className={`z-50 fixed flexCol justify-between top-0 right-0 z-50 h-full w-full bg-beige p-6 shadow-lg  md:hidden transform transition-transform duration-300 ease-in-out
       ${open ? 'translate-x-0' : 'translate-x-full'}
       `}
       role="dialog"

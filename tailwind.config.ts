@@ -7,11 +7,16 @@ const config: Config = {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    screens: {
+      md: '768px',
+      lg: '1280px',
+      xl: '1728px',
+    },
     extend: {
       colors: {
-        beige: 'rgb(var(--color-beige) / <alpha-value>)',
-        black: 'rgb(var(--color-black) / <alpha-value>)',
-        highlight: 'rgb(var(--color-highlight) / <alpha-value>)',
+        beige: 'rgb(var(--beige) / <alpha-value>)',
+        black: 'rgb(var(--black) / <alpha-value>)',
+        highlight: 'rgb(var(--highlight) / <alpha-value>)',
       },
       fontFamily: {
         body: ['var(--font-body)'],
