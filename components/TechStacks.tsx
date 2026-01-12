@@ -5,9 +5,11 @@ export default function TechStacks() {
   return (
     <section className="flexCol gap-y-3 w-full dark:bg-black">
       <h2 className="ty-h2">Tech Stacks</h2>
-      {SKILL_CARDS.map((card) => (
-        <TechStacksCard key={card.title} data={card} />
-      ))}
+      <div className="w-full flexCol gap-3 md:flex-row justify-start lg:gap-6">
+        {SKILL_CARDS.map((card) => (
+          <TechStacksCard key={card.title} data={card} />
+        ))}
+      </div>
     </section>
   );
 }

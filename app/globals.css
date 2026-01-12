@@ -30,11 +30,11 @@
 
   /* Body1 · 14/22 */
   --text-body1: 0.875rem; /* 14px */
-  --leading-body1: 1.375rem; /* 22px */
+  --leading-body1: 1.3rem; /* 22px */
 
   /* Body2 · 12/20 */
   --text-body2: 0.75rem; /* 12px */
-  --leading-body2: 1.25rem; /* 20px */
+  --leading-body2: 1.125rem; /* 18px */
 
   /* Button · 14/20 */
   --text-button: 0.875rem; /* 14px */
@@ -159,7 +159,7 @@
     --text-body1: 1rem; /* 16px */
     --leading-body1: 1.5rem; /* 24px */
 
-    --text-body2: 0.75rem; /* 14px */
+    --text-body2: 0.875rem; /* 14px */
     --leading-body2: 1.25rem; /* 20px */
 
     --text-button: 1.5rem; /* 24px */
@@ -199,10 +199,10 @@
     --text-subtitle: 1.25rem; /* 24px */
     --leading-subtitle: 1.75rem; /* 30px */
 
-    --text-body1: 1rem; /* 18px */
+    --text-body1: 1.125rem; /* 18px */
     --leading-body1: 1.5rem; /* 30px */
 
-    --text-body2: 0.75rem; /* 16px */
+    --text-body2: 1rem; /* 16px */
     --leading-body2: 1.25rem; /* 26px */
 
     --text-button: 2rem; /* 20px */
