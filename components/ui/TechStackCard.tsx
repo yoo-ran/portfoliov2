@@ -4,7 +4,7 @@ import { SkillCardData } from '@/lib/skills-data';
 
 export default function TechStacksCard({ data }: { data: SkillCardData }) {
   return (
-    <div className="flexCol gap-y-3 w-full md:w-1/2 lg:w-1/3  bg-black p-4 rounded-sm lg:p-5 xl:p-6 lg:rounded-lg dark:bg-black">
+    <div className="flexCol gap-y-3 xl:gap-y-6 w-full md:w-1/2 lg:w-1/2  bg-black p-4 md:p-5 rounded-sm md:rounded-md lg:p-6 xl:p-8 lg:rounded-lg dark:bg-black">
       <div className="flexRow gap-x-2">
         <Monitor className="border rounded-sm p-1 text-white" />
         <p className="capitalize ty-h3 text-white">{data.title}</p>
@@ -12,7 +12,7 @@ export default function TechStacksCard({ data }: { data: SkillCardData }) {
 
       <div className="flexCol gap-y-1">
         <p className="capitalize ty-subtitle text-white">advanced</p>
-        <div className="flexRow gap-x-0.5">
+        <div className="flexRow gap-x-0.5 md:gap-x-1 xl:gap-x-2">
           {data.advanced.map((item) => (
             <TechChip key={item.label} item={item} />
           ))}
@@ -21,7 +21,7 @@ export default function TechStacksCard({ data }: { data: SkillCardData }) {
 
       <div className="flexCol gap-y-1">
         <p className="capitalize ty-subtitle text-white">intermediate</p>
-        <div className="flexRow gap-x-0.5">
+        <div className="flexRow gap-x-0.5 md:gap-x-1 xl:gap-x-2">
           {data.intermediate.map((item) => (
             <TechChip key={item.label} item={item} />
           ))}

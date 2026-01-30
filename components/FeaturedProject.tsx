@@ -27,8 +27,8 @@ export default function ProjectCard({ project }: Props) {
           </div>
           <p className="ty-body2">{project.description}</p>
           <div className="w-full flexRow flex-wrap justify-start gap-1 mt-4">
-            {project.techStacks.map((tech) => (
-              <TechChip item={tech} />
+            {project.techStacks.map((tech, idx) => (
+              <TechChip key={`${project.title}-${tech.label}-${idx}`} item={tech} />
             ))}
           </div>
         </div>

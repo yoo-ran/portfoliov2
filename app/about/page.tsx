@@ -1,18 +1,19 @@
 import TechStacksCard from '../../components/ui/TechStackCard';
-import MoreAboutMe from '@/components/ui/MoreAboutMeCard';
+import MoreAboutMeCard from '@/components/ui/MoreAboutMeCard';
+import { MORE_ABOUT_ME } from '@/lib/moreAboutMe-data';
 import { SKILL_CARDS } from '@/lib/skills-data';
 import Image from 'next/image';
 export default function AboutPage() {
   return (
-    <main className="flexCol gap-y-18 w-full dark:bg-black py-36  px-[1rem] md:px-[2rem] lg:px-[5rem] xl:px-[7.5rem] ">
+    <main className="flexCol gap-y-14 lg:gap-y-22 xl:gap-y-26 w-full lg:w-10/12 dark:bg-black py-36  px-[1rem] md:px-[2rem] lg:px-[5rem] xl:px-[7.5rem] ">
       {/* HERO SECTION */}
       <section className="flexCol gap-y-4">
-        <div className="flexRow w-full">
+        <div className="flexRow items-end w-full">
           <div>
             <p className="ty-subtitle capitalize leading-none">about me</p>
             <h1 className="ty-header-title leading-none uppercase">yooran kim</h1>
           </div>
-          <div className="relative w-1/4 aspect-3/4">
+          <div className="relative w-1/4 aspect-3/4 md:w-1/6">
             <Image
               src="/images/hero.png"
               alt="Hero"
@@ -22,19 +23,19 @@ export default function AboutPage() {
             />
           </div>
         </div>
-        <div className=" w-full ty-body1">
+        <div className="w-full md:w-1/2 ty-body1">
           As a Full-Stack Developer, I thrive on the challenge of transforming concepts
           into tangible, interactive solutions. 
         </div>
       </section>
 
       {/* BIO SECTION */}
-      <section className="flexCol gap-y-2">
-        <div className="flexRow gap-x-2">
+      <section className="flexCol w-full md:flex-row md:justify-between gap-y-2">
+        <div className="flexRow justify-start gap-x-2 w-2/12">
           <p className="bg-black w-3 h-3"></p>
           <h2 className="ty-h2 capitalize">bio</h2>
         </div>
-        <div className="ty-body1">
+        <div className="ty-body1 md:w-9/12 xl:w-2/3">
           As a front-end developer, I thrive on the challenge of transforming concepts
           into tangible, interactive solutions. Coding isn't just a skill for me; it's a
           journey where I put together all the knowledge that I have stacked and discover
@@ -44,12 +45,12 @@ export default function AboutPage() {
       </section>
 
       {/* EDUCATION SECTION */}
-      <section className="flexCol gap-y-2">
-        <div className="flexRow gap-x-2">
+      <section className="flexCol w-full md:flex-row md:justify-between gap-y-2">
+        <div className="flexRow justify-start gap-x-2">
           <p className="bg-black w-3 h-3"></p>
           <h2 className="ty-h2 capitalize">education</h2>
         </div>
-        <div className="flexCol gap-y-6">
+        <div className="flexCol gap-y-6  md:w-9/12  xl:w-2/3 md:pt-3">
           <ul className="flexCol w-full">
             <li className="flexCol gap-y-1 w-full">
               <p className="ty-body1 font-bold">
@@ -83,12 +84,12 @@ export default function AboutPage() {
       </section>
 
       {/* EXPERIENCE SECTION */}
-      <section className="flexCol gap-y-2 w-full">
+      <section className="flexCol w-full md:flex-row md:justify-between md:items-start gap-y-2">
         <div className="flexRow gap-x-2">
           <p className="bg-black w-3 h-3"></p>
           <h2 className="ty-h2 capitalize">experience</h2>
         </div>
-        <div className="flexCol w-full">
+        <div className="flexCol gap-y-6  md:w-9/12 xl:w-2/3 md:pt-3">
           <ul className="flexCol w-full">
             <li className=" w-full">
               <p className="ty-body1 font-bold">Full-Stack Developer (Co-op) </p>
@@ -102,7 +103,7 @@ export default function AboutPage() {
       </section>
 
       {/* TECH SECTION */}
-      <section className="flexCol gap-y-2 w-full">
+      <section className="flexCol gap-y-2 w-full xl:gap-y-4">
         <div className="flexRow gap-x-2">
           <p className="bg-black w-3 h-3"></p>
           <h2 className="ty-h2 capitalize">tech stacks</h2>
@@ -115,13 +116,20 @@ export default function AboutPage() {
       </section>
 
       {/* MORE ABOUT ME SECTION */}
-      <section className="flexCol gap-y-2 w-full">
+      <section className="flexCol gap-y-2 w-full xl:gap-y-4">
         <div className="flexRow gap-x-2">
           <p className="bg-black w-3 h-3"></p>
           <h2 className="ty-h2 capitalize">more about me</h2>
         </div>
-        <div className="w-full">
-          <MoreAboutMe />
+        <div className="w-full flexCol gap-3 md:flex-row justify-start lg:gap-6">
+          {MORE_ABOUT_ME.map((card) => (
+            <MoreAboutMeCard
+              key={card.title}
+              icon={card.icon} // 👈 card title icon
+              title={card.title}
+              items={card.items}
+            />
+          ))}
         </div>
       </section>
     </main>

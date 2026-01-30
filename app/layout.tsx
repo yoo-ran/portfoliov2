@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Abel, Titillium_Web } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/Header';
+import SiteShell from '@/components/SiteShell';
 import Footer from '@/components/Footer';
 
 // Main sans-serif (body)
@@ -31,12 +31,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`
           ${inter.variable}
           ${titillium.variable}
@@ -46,8 +45,7 @@ export default function RootLayout({
           flex flex-col justify-center items-center
         `}
       >
-        <Header />
-        {children}
+        <SiteShell>{children}</SiteShell>
         <Footer />
       </body>
     </html>
