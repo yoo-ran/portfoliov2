@@ -1,20 +1,40 @@
 import { PROJECTS } from '@/lib/projects-data';
 import ProjectCard from './ui/ProjectCard';
-import FeaturedProject from './FeaturedProject';
 
-export default function Projects() {
-  const featuredProject = PROJECTS[0];
-  const restProjects = PROJECTS.slice(1);
+type Props = {
+  selectedTech?: string[]; // used on Projects page
+  startIndex?: number; // used on Home page
+  limit?: number; // used on Home page
+};
+
+export default function Projects({ selectedTech = [], startIndex = 0, limit }: Props) {
+  const normalized = selectedTech.map((t) => t.toLowerCase().trim());
+
+  const filtered =
+    normalized.length === 0
+      ? PROJECTS
+      : PROJECTS.filter((p) =>
+          p.techStacks.some((t) => normalized.includes(t.label.toLowerCase().trim())),
+        );
+
+  const sliced =
+    limit != null
+      ? filtered.slice(startIndex, startIndex + limit)
+      : filtered.slice(startIndex);
+
+  if (sliced.length === 0) {
+    return (
+      <div className="w-full py-10 text-center ty-body2 opacity-70">
+        No projects to show.
+      </div>
+    );
+  }
 
   return (
-    <section className="flexCol gap-y-3 w-full dark:bg-black">
-      <h2 className="ty-h2">Projects</h2>
-      <FeaturedProject key={featuredProject.title} project={featuredProject} />
-      <div className="grid grid-cols-1 w-full gap-y-3 md:grid-cols-2 md:gap-x-6 lg:grid-cols-3">
-        {restProjects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
-        ))}
-      </div>
-    </section>
+    <div className="grid w-full grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
+      {sliced.map((project) => (
+        <ProjectCard key={project.title} project={project} />
+      ))}
+    </div>
   );
 }

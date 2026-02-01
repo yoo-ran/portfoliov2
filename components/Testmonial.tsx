@@ -18,8 +18,7 @@ export default function TestimonialCarousel() {
   const testimonial = TESTIMONIALS[index];
 
   return (
-    <section className="relative w-full">
-      <h2 className="ty-h2 mb-4">Testimonials</h2>
+    <div className="relative w-full">
       {/* Card */}
       <div className="flexCol gap-y-5 h-[20rem]  md:flexRow border border-2 rounded-sm p-6 ">
         <Quote />
@@ -50,6 +49,6 @@ export default function TestimonialCarousel() {
           <ChevronRight />
         </button>
       </div>
-    </section>
+    </div>
   );
 }

@@ -8,7 +8,7 @@ type Props = {
   project: Project;
 };
 
-export default function ProjectCard({ project }: Props) {
+export default function FeaturedProject({ project }: Props) {
   return (
     <div className="flexCol justify-start gap-y-4 w-full bg-black p-4 text-beige rounded-sm md:rounded-md lg:rounded-lg lg:p-6 xl:p-7 xl:gap-y-5 dark:border-beige">
       <div className="w-full flexCol md:flex-row justify-between gap-4 lg:gap-x-10">

@@ -42,7 +42,7 @@ export default function RootLayout({
           ${abel.variable}
           antialiased
           w-full
-          flex flex-col justify-center items-center
+          px-[1rem] md:px-[2rem] lg:px-[5rem] xl:px-[7.5rem]
         `}
       >
         <SiteShell>{children}</SiteShell>

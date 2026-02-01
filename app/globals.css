@@ -214,13 +214,6 @@
 }
 
 @layer components {
-  /* ---------------- BUTTON ---------------- */
-  /* .ui-btn {
-    border-radius: var(--radius-btn);
-    padding: var(--btn-py) var(--btn-px);
-    @apply inline-flex items-center justify-center gap-2 
-          bg-highlight  transition-colors duration-200;
-  } */
 
   .flexCol {
     @apply flex flex-col justify-center items-start;
@@ -234,24 +227,8 @@
     @apply border border-black/30 bg-transparent;
   }
 
-  /* ---------------- CARD ---------------- */
-  .ui-card {
-    border-radius: var(--radius-card);
-    padding: var(--card-p);
-    @apply shadow-sm border border-black/10;
-  }
-
-  /* ---------------- CHIP ---------------- */
-  .ui-chip {
-    border-radius: var(--radius-chip);
-    padding: var(--chip-py) var(--chip-px);
-    @apply inline-flex items-center gap-2;
-  }
 
   /* ---------------- Font ---------------- */
-  /* ===========================
-   TYPOGRAPHY (using CSS vars)
-   =========================== */
 
   .ty-header-title {
     @apply font-title font-bold tracking-tight;
@@ -308,6 +285,7 @@
 }
 
 body {
+  @apply flex flex-col justify-center items-center;
   background: rgb(var(--beige));
   color: rgb(var(--black));
   font-family: var(--font-body, system-ui, -apple-system, BlinkMacSystemFont, sans-serif);

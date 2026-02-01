@@ -9,7 +9,7 @@ type Props = {
 
 export default function ProjectCard({ project }: Props) {
   return (
-    <div className="flexCol justify-between gap-y-4 w-full bg-black p-4 text-beige rounded-sm md:rounded-md lg:rounded-lg lg:p-5 xl:p-6 lg:gap-y-5 dark:border-beige">
+    <div className="flexCol justify-between gap-y-4 w-full  bg-black p-4 text-beige rounded-sm md:rounded-md lg:rounded-lg lg:p-5 xl:p-6 lg:gap-y-5 dark:border-beige">
       <div className="relative w-full aspect-16/9">
         <Image
           src={project.image}
