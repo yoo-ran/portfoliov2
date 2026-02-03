@@ -3,6 +3,7 @@ import { Inter, Abel, Titillium_Web } from 'next/font/google';
 import './globals.css';
 import SiteShell from '@/components/SiteShell';
 import Footer from '@/components/Footer';
+import { ContactFabMenu } from '@/components/ui/ContactFabMenu';
 
 // Main sans-serif (body)
 const inter = Inter({
@@ -41,12 +42,14 @@ export default function RootLayout({
           ${titillium.variable}
           ${abel.variable}
           antialiased
+          relative
           w-full
           px-[1rem] md:px-[2rem] lg:px-[5rem] xl:px-[7.5rem]
         `}
       >
         <SiteShell>{children}</SiteShell>
         <Footer />
+        <ContactFabMenu />
       </body>
     </html>
   );
