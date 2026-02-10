@@ -4,7 +4,7 @@ import { SkillCardData } from '@/lib/skills-data';
 
 export default function TechStacksCard({ data }: { data: SkillCardData }) {
   return (
-    <div className="flexCol gap-y-3 xl:gap-y-6 w-full md:w-1/2 lg:w-1/2  bg-black p-4 md:p-5 rounded-sm md:rounded-md lg:p-6 xl:p-8 lg:rounded-lg dark:bg-black">
+    <div className="flexCol gap-y-3 xl:gap-y-6 w-full md:w-1/2 lg:w-1/3  bg-black p-4 md:p-5 rounded-sm md:rounded-md lg:p-6 xl:p-8 lg:rounded-lg dark:bg-black">
       <div className="flexRow gap-x-2">
         <Monitor className="border rounded-sm p-1 text-white" />
         <p className="capitalize ty-h3 text-white">{data.title}</p>

@@ -21,47 +21,47 @@ export default function FeaturedProject({ project }: Props) {
           />
         </div>
         <div className=" w-full lg:w-1/2 h-1/3 flexCol justify-start gap-y-2 lg:gap-y-4">
-          <div className="flexRow justify-start gap-x-2">
+          <div className="flexRow items-end gap-x-2">
             <p className="ty-h2 leading-none">{project.title}</p>
             <span className="ty-tech-btn ">({project.type} Project)</span>
           </div>
-          <p className="ty-body2">{project.description}</p>
+          <p className="ty-body1">{project.description}</p>
           <div className="w-full flexRow flex-wrap justify-start gap-1 mt-4">
             {project.techStacks.map((tech, idx) => (
               <TechChip key={`${project.title}-${tech.label}-${idx}`} item={tech} />
             ))}
           </div>
+          <div className="hidden md:block">
+            <p className="ty-h3">Key Features</p>
+            <ul className="flexCol lg:gap-y-2 list-disc ml-4 ty-body1 lg:mt-3">
+              <li>
+                Login / Logout: Impelemented secure user authentication using JWT and
+                session management
+              </li>
+              <li>
+                Upload Property: Created a input form to save property details with image
+                uploads in the database
+              </li>
+              <li>
+                Login / Logout: Impelemented secure user authentication using JWT and
+                session management
+              </li>
+              <li>
+                Excel Upload: Built Excel upload and AG-Grid table integration for bulk
+                property import, editing and database sync.
+              </li>
+              <li>
+                Property Detail: Implemented editable property pages withe CRUD feautures.
+              </li>
+              <li>
+                Search / Filter: Designed an advanced filters and keyword search for quick
+                access
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div className="hidden md:block">
-        <p className="ty-h3">Key Features</p>
-        <ul className="list-disc ml-4 ty-body2">
-          <li>
-            Login / Logout: Impelemented secure user authentication using JWT and session
-            management
-          </li>
-          <li>
-            Upload Property: Created a input form to save property details with image
-            uploads in the database
-          </li>
-          <li>
-            Login / Logout: Impelemented secure user authentication using JWT and session
-            management
-          </li>
-          <li>
-            Excel Upload: Built Excel upload and AG-Grid table integration for bulk
-            property import, editing and database sync.
-          </li>
-          <li>
-            Property Detail: Implemented editable property pages withe CRUD feautures.
-          </li>
-          <li>
-            Search / Filter: Designed an advanced filters and keyword search for quick
-            access
-          </li>
-        </ul>
-      </div>
-      <div className="flexRow justify-end gap-x-2 border-t-2 w-full pt-3 lg:pt-4">
+      <div className="flexRow justify-end gap-x-2 border-t-2 w-full pt-3 lg:pt-6 lg:mt-4">
         <LinkChip links={project.links} />
       </div>
     </div>

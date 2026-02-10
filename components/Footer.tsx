@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <div className="w-11/12 md:w-10/12 flexCol ">
+    <div className="w-11/12 md:w-10/12 flexCol lg:mt-20">
       <section className="py-4 md:py-10 flexCol sm:flex-row sm:justify-between w-full gap-y-4">
         <div className="sm:w-1/2 md:w-5/12">
           <h2 className="ty-h2">Yooran Kim</h2>
@@ -11,9 +11,9 @@ export default function Footer() {
             into tangible, interactive solutions.{' '}
           </p>
         </div>
-        <div className="w-3/8 md:w-1/2 ">
+        <div className="flexCol lg:gap-y-2 w-3/8 md:w-1/2 ">
           <h3 className="ty-h3">Menu</h3>
-          <div className="flexCol  uppercase">
+          <div className="flexCol lg:gap-y-2  uppercase">
             <Link href="/" className="ty-body2">
               Home
             </Link>
@@ -29,7 +29,7 @@ export default function Footer() {
       <section className="w-full border-t-1 py-4 md:py-10 flexCol sm:items-center">
         <p className="ty-body2">&copy; 2025 Yooran Kim. All right reserved.</p>
         <span className="ty-tech-btn">
-          Built using Next.js, Typescript, and Tailwind CSS
+          Built using Next.js, Typescript, Tailwind CSS and Framer Motion :)
         </span>
       </section>
     </div>
