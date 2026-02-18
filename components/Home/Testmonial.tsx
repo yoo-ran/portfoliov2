@@ -3,7 +3,7 @@
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { TESTIMONIALS } from '../lib/testimonials-data';
+import { TESTIMONIALS } from '../../lib/testimonials-data';
 
 function useMediaQuery(query: string) {
   const [matches, setMatches] = useState(false);
@@ -58,7 +58,7 @@ export default function TestimonialCarousel() {
         - constrain visible area to a fixed-ish width (so 2 cards fit + a bit)
         - overflow-hidden clips, so the 3rd card peeks in
       */}
-      <div className="relative overflow-hidden md:mx-auto md:max-w-8/12">
+      <div className="relative overflow-hidden md:mx-auto md:max-w-10/12">
         <AnimatePresence initial={false} custom={direction} mode="popLayout">
           <motion.div
             key={`${index}-${perView}`}
@@ -78,9 +78,6 @@ export default function TestimonialCarousel() {
               if (swipe < -SWIPE_THRESHOLD) next();
               if (swipe > SWIPE_THRESHOLD) prev();
             }}
-            // Layout:
-            // - mobile: full width single card
-            // - desktop: flex with fixed card width so 3rd peeks
             className={isMdUp ? 'flex gap-4' : 'w-full'}
           >
             {visible.map((t, i) => (
@@ -88,14 +85,12 @@ export default function TestimonialCarousel() {
                 key={`${t.author}-${i}`}
                 className={[
                   'flexCol justify-between gap-y-5 border border-2 rounded-sm p-6',
-                  'h-[20rem] md:h-[20rem]',
-                  isMdUp
-                    ? 'shrink-0 w-[340px]' // fixed width enables peek
-                    : 'w-full',
+                  'h-[20rem] md:h-[20rem] lg:h-[24rem]',
+                  isMdUp ? 'shrink-0 w-[30rem]' : 'w-full',
                 ].join(' ')}
               >
                 <Quote />
-                <p className="ty-body1 italic line-clamp-7 h-full overflow-y-auto">
+                <p className="ty-body1 italic line-clamp-7 text-ellipsis h-full overflow-y-auto">
                   "{t.quote}"
                 </p>
                 <div className="ty-body1 font-semibold leading-none">

@@ -1,11 +1,11 @@
 import { PROJECTS } from '@/lib/projects-data';
 import Reveal from '@/components/motion/RevealScroll';
 
-import Hero from '@/components/Hero';
+import Hero from '@/components/Home/Hero';
 import TechStacks from '@/components/TechStacks';
 import Projects from '@/components/Projects';
 import FeaturedProject from '@/components/FeaturedProject';
-import Testimonials from '@/components/Testmonial';
+import Testimonials from '@/components/Home/Testmonial';
 
 export default function Home() {
   const featured = PROJECTS[0];

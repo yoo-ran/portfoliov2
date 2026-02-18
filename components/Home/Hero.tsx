@@ -1,9 +1,19 @@
-import ContactBtn from './ui/ContactButton';
+'use client';
+
+import ContactBtn from '../ui/ContactButton';
 import Image from 'next/image';
-import FadeUp from './motion/FadeUp';
-import Blink from './motion/Blink';
+import FadeUp from '../motion/FadeUp';
+import Blink from '../motion/Blink';
+
+import { Copy, Linkedin } from 'lucide-react';
 
 export default function Hero() {
+  const email = 'yuranm80@gmail.com';
+
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText(email);
+  };
+
   return (
     <section className="flexCol gap-y-10 w-full h-svh dark:bg-black">
       <div className="flexCol w-full  gap-y-2">
@@ -22,8 +32,9 @@ export default function Hero() {
             </FadeUp>
             <FadeUp>
               <li className="text-[0.75rem] md:text-[0.875rem] lg:text-[1.25rem] xl:text-[1.5rem]">
-                Open to job opportunities worldwide. Passionate about building polished,
-                intuitive, and thoughtful digital experiences that leave a mark.
+                I <strong>translate product goals into usable interfaces</strong> by
+                simplifying UX, designing clear flows, building reusable components, and
+                delivering stable integrations.
               </li>
             </FadeUp>
           </ul>
@@ -43,7 +54,13 @@ export default function Hero() {
 
         <div className="flexRow items-end w-full">
           <div>
-            <ContactBtn />
+            <ContactBtn label="Copy Email" icon={Copy} onClick={copyEmail} />
+            <ContactBtn
+              label="LinkedIn"
+              icon={Linkedin}
+              href="https://www.linkedin.com/in/your-handle"
+              target="_blank"
+            />
           </div>
           <ul className="flexCol items-end uppercase">
             <li className="font-label text-[0.875rem] md:text-[1.125rem] lg:text-[1.5rem] xl:text-[2rem] leading-none">
