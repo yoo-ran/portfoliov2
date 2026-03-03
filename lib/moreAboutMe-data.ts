@@ -1,5 +1,5 @@
 // moreAboutMe.data.ts
-import { Code, Sparkles } from 'lucide-react';
+import { Code, Rocket, Sparkles, Wrench } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 type MoreAboutMeCardData = {
@@ -13,20 +13,40 @@ export const MORE_ABOUT_ME: MoreAboutMeCardData[] = [
     icon: Code,
     title: 'Coding Philosophy',
     items: [
-      'Clean and maintainable code',
-      'Readable over clever',
-      'Consistent patterns & naming',
-      'Small components, clear responsibility',
+      'Clarity over complexity in code and experience',
+      'Reusable components for consistency and efficiency',
+      'Scalable structure built for maintainability',
+      'Structured problem-solving with thoughtful execution',
     ],
   },
   {
     icon: Sparkles,
     title: 'Values',
     items: [
-      'Empathy-first UX',
-      'Always learning and improving',
-      'Empathy-first UX',
-      'Always learning and improving',
+      'Clear and honest communication',
+      'Consistency in execution, quality, and care',
+      'Thoughtfulness in every detail and decision',
+      'Curiosity that drives continuous growth',
+    ],
+  },
+  {
+    icon: Wrench,
+    title: 'How I Build',
+    items: [
+      'Starting with the user and the problem',
+      'Exploring thoughtful solutions to real needs',
+      'Translating ideas into practical solutions',
+      'Refining through iteration, feedback, and detail',
+    ],
+  },
+  {
+    icon: Rocket,
+    title: 'What I’m Focused On Right Now',
+    items: [
+      'Strengthening end-to-end full-stack development',
+      'Refining component-driven interfaces and systems',
+      'Building scalable and maintainable solutions',
+      'Exploring thoughtful AI integration in web experiences',
     ],
   },
 ];

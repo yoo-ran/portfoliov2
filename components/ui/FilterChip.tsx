@@ -11,7 +11,7 @@ export default function FilterChip({ label, isActive, onClick }: FilterChipProps
       onClick={onClick}
       aria-pressed={isActive}
       className={[
-        'rounded-sm border px-2 py-1 ty-body2  transition-colors duration-200',
+        'rounded-sm border px-2 py-1 ty-body2  transition-colors duration-200 hover:cursor-pointer',
         isActive
           ? 'bg-black text-beige'
           : 'bg-transparent text-black border-black hover:border-beige hover:bg-beige/10',

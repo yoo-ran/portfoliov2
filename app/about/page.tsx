@@ -32,9 +32,9 @@ export default function AboutPage() {
             />
           </div>
         </div>
-        <div className="w-full md:w-1/2 ty-body1">
-          As a Full-Stack Developer, I thrive on the challenge of transforming concepts
-          into tangible, interactive solutions. 
+        <div className="w-full md:w-1/2 lg:w-1/3  ty-subtitle">
+          I build web experiences with a strong focus on usability, consistency, and clean
+          implementation.
         </div>
       </section>
 
@@ -46,11 +46,11 @@ export default function AboutPage() {
             <h2 className="ty-h2 capitalize">bio</h2>
           </div>
           <div className="ty-body1 w-full md:w-2/3">
-            As a front-end developer, I thrive on the challenge of transforming concepts
-            into tangible, interactive solutions. Coding isn't just a skill for me; it's a
-            journey where I put together all the knowledge that I have stacked and
-            discover the answers with the insight I've honed. Coding is always wait for me
-            at the finish line with the answer.
+            I’m a full-stack developer focused on building digital experiences that are
+            clear, functional, and thoughtfully crafted. I enjoy working across both
+            frontend and backend, from creating intuitive interfaces to building reliable
+            systems that support them. I believe good products should be technically
+            solid, easy to use, and refined in the details.
           </div>
         </section>
       </Reveal>
@@ -106,7 +106,7 @@ export default function AboutPage() {
             <p className="bg-black w-3 h-3"></p>
             <h2 className="ty-h2 capitalize">tech stacks</h2>
           </div>
-          <div className="w-full flexCol gap-3 md:flex-row justify-start lg:gap-6">
+          <div className="w-full grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 justify-start lg:gap-6">
             {SKILL_CARDS.map((card) => (
               <TechStacksCard key={card.title} data={card} />
             ))}
@@ -121,7 +121,7 @@ export default function AboutPage() {
             <p className="bg-black w-3 h-3"></p>
             <h2 className="ty-h2 capitalize">more about me</h2>
           </div>
-          <div className="w-full flexCol gap-3 md:flex-row justify-start lg:gap-6">
+          <div className="w-full grid grid-cols-1 gap-3 md:grid-cols-2  justify-start lg:gap-6">
             {MORE_ABOUT_ME.map((card) => (
               <MoreAboutMeCard
                 key={card.title}

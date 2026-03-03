@@ -26,10 +26,10 @@ export const PROJECTS: Project[] = [
     description:
       ' This project is a full-stack CRUD application built with React.js, Node.js, and MySQL for a real estate business to upload, manage, and filter properties, improving listing organization.',
     techStacks: [
-      { image: '/images/techStacks/nextjs.svg', label: 'Next.js' },
-      { image: '/images/techStacks/typescript.svg', label: 'TypeScript' },
-      { image: '/images/techStacks/prisma.svg', label: 'Prisma' },
-      { image: '/images/techStacks/postgres.svg', label: 'PostgreSQL' },
+      { image: '/images/techStacks/next.png', label: 'Next.js' },
+      { image: '/images/techStacks/typescript.png', label: 'TypeScript' },
+      { image: '/images/techStacks/prisma.png', label: 'Prisma' },
+      { image: '/images/techStacks/postgresql.png', label: 'PostgreSQL' },
     ],
     links: {
       github: 'https://github.com/yourname/ai-pet',
@@ -43,10 +43,10 @@ export const PROJECTS: Project[] = [
     description:
       'A journaling and mood-tracking app where users interact with an evolving AI pet.',
     techStacks: [
-      { image: '/images/techStacks/nextjs.svg', label: 'Next.js' },
-      { image: '/images/techStacks/typescript.svg', label: 'TypeScript' },
-      { image: '/images/techStacks/prisma.svg', label: 'Prisma' },
-      { image: '/images/techStacks/postgres.svg', label: 'PostgreSQL' },
+      { image: '/images/techStacks/next.png', label: 'Next.js' },
+      { image: '/images/techStacks/typescript.png', label: 'TypeScript' },
+      { image: '/images/techStacks/prisma.png', label: 'Prisma' },
+      { image: '/images/techStacks/postgresql.png', label: 'PostgreSQL' },
     ],
     links: {
       github: 'https://github.com/yourname/ai-pet',
@@ -61,7 +61,7 @@ export const PROJECTS: Project[] = [
       'A real estate management platform with CRUD operations and image uploads.',
     techStacks: [
       { image: '/images/techStacks/react.png', label: 'React' },
-      { image: '/images/techStacks/node.svg', label: 'Node.js' },
+      { image: '/images/techStacks/node.png', label: 'Node.js' },
       { image: '/images/techStacks/mysql.png', label: 'MySQL' },
     ],
     links: {
