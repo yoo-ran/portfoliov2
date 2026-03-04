@@ -1,4 +1,5 @@
 import { PROJECTS } from '@/lib/projects-data';
+import ProjectCard from '@/components/ui/ProjectCard';
 import Reveal from '@/components/motion/RevealScroll';
 
 import Hero from '@/components/Home/Hero';
@@ -22,11 +23,16 @@ export default function Home() {
       <Reveal>
         <div className="flexCol gap-y-2 md:gap-y-4 lg:gap-y-6 xl:gap-y-8 w-full">
           <h2 className="ty-h2">Projects</h2>
-          {/* project[0] */}
-          <FeaturedProject project={featured} />
+          <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-2 w-full">
+            <div className="col-span-2 w-full">
+              {/* project[0] */}
+              <FeaturedProject project={featured} />
+            </div>
 
-          {/* project[1], project[2] */}
-          <Projects startIndex={1} limit={2} />
+            <div className="col-span-1 w-full">
+              <ProjectCard key={PROJECTS[1].title} project={PROJECTS[1]} />
+            </div>
+          </div>
         </div>
       </Reveal>
       <Reveal>

@@ -7,6 +7,7 @@ export const TECH_ICON: Record<string, string> = {
   gsap: '/images/techStacks/gsap.png',
 
   next: '/images/techStacks/next.png',
+  api: '/images/techStacks/api.png',
   typescript: '/images/techStacks/typescript.png',
   framer: '/images/techStacks/framer.png',
   postgres: '/images/techStacks/postgresql.png',

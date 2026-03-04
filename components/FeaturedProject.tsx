@@ -11,26 +11,31 @@ type Props = {
 export default function FeaturedProject({ project }: Props) {
   return (
     <div className="flexCol justify-start gap-y-4 w-full bg-black p-4 text-beige rounded-sm md:rounded-md lg:rounded-lg lg:p-6 xl:p-7 xl:gap-y-5 dark:border-beige">
-      <div className="w-full flexCol md:flex-row justify-between gap-4 lg:gap-x-10">
-        <div className="relative w-full lg:w-1/2 aspect-16/9">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover object-top rounded-md"
-          />
+      <div className="w-full flexCol justify-between gap-4 lg:gap-x-10">
+        <div className="flexRow items-start gap-x-3">
+          <div className="relative w-full lg:w-1/2 aspect-16/9">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover object-top rounded-md"
+            />
+          </div>
+          <div className="flexCol gap-6 lg:w-1/2">
+            <div className="flexRow items-end gap-x-2">
+              <p className="ty-h2 leading-none">{project.title}</p>
+              <span className="ty-tech-btn ">({project.type} Project)</span>
+            </div>
+            <p className="ty-body1">{project.description}</p>
+            <div className="w-full flexRow flex-wrap justify-start gap-1 ">
+              {project.techStacks.map((tech, idx) => (
+                <TechChip key={`${project.title}-${tech.label}-${idx}`} item={tech} />
+              ))}
+            </div>
+          </div>
         </div>
-        <div className=" w-full lg:w-1/2 h-1/3 flexCol justify-start gap-y-2 lg:gap-y-4">
-          <div className="flexRow items-end gap-x-2">
-            <p className="ty-h2 leading-none">{project.title}</p>
-            <span className="ty-tech-btn ">({project.type} Project)</span>
-          </div>
-          <p className="ty-body1">{project.description}</p>
-          <div className="w-full flexRow flex-wrap justify-start gap-1 mt-4">
-            {project.techStacks.map((tech, idx) => (
-              <TechChip key={`${project.title}-${tech.label}-${idx}`} item={tech} />
-            ))}
-          </div>
+
+        <div className=" w-full  h-1/3 flexCol justify-start gap-y-2 lg:gap-y-4">
           <div className="hidden md:block">
             <p className="ty-h3">Key Features</p>
             <ul className="flexCol lg:gap-y-2 list-disc ml-4 ty-body1 lg:mt-3">
@@ -41,10 +46,6 @@ export default function FeaturedProject({ project }: Props) {
               <li>
                 Upload Property: Created a input form to save property details with image
                 uploads in the database
-              </li>
-              <li>
-                Login / Logout: Impelemented secure user authentication using JWT and
-                session management
               </li>
               <li>
                 Excel Upload: Built Excel upload and AG-Grid table integration for bulk

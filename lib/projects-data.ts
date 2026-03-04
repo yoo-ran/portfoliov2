@@ -20,52 +20,44 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
-    image: '/images/projects/dejapp.png',
+    image: '/images/projects/goldenkey.jpg',
     title: 'Golden Key',
     type: 'Team',
     description:
       ' This project is a full-stack CRUD application built with React.js, Node.js, and MySQL for a real estate business to upload, manage, and filter properties, improving listing organization.',
     techStacks: [
-      { image: '/images/techStacks/next.png', label: 'Next.js' },
-      { image: '/images/techStacks/typescript.png', label: 'TypeScript' },
-      { image: '/images/techStacks/prisma.png', label: 'Prisma' },
-      { image: '/images/techStacks/postgresql.png', label: 'PostgreSQL' },
+      { image: '/images/techStacks/node.png', label: 'Node.js' },
+      { image: '/images/techStacks/react.png', label: 'React' },
+      { image: '/images/techStacks/html5.png', label: 'HTML5' },
+      { image: '/images/techStacks/css.png', label: 'CSS3' },
+      { image: '/images/techStacks/tailwind.png', label: 'Tailwind' },
+      { image: '/images/techStacks/mysql.png', label: 'MySQL' },
+      { image: '/images/techStacks/express.png', label: 'Express' },
+      { image: '/images/techStacks/postman.svg', label: 'Postman' },
     ],
     links: {
-      github: 'https://github.com/yourname/ai-pet',
+      github: 'https://github.com/yoo-ran/goldenkey',
       live: 'https://ai-pet.vercel.app',
     },
   },
   {
     image: '/images/projects/dejapp.png',
-    title: 'AI Pet',
-    type: 'Individual',
-    description:
-      'A journaling and mood-tracking app where users interact with an evolving AI pet.',
-    techStacks: [
-      { image: '/images/techStacks/next.png', label: 'Next.js' },
-      { image: '/images/techStacks/typescript.png', label: 'TypeScript' },
-      { image: '/images/techStacks/prisma.png', label: 'Prisma' },
-      { image: '/images/techStacks/postgresql.png', label: 'PostgreSQL' },
-    ],
-    links: {
-      github: 'https://github.com/yourname/ai-pet',
-      live: 'https://ai-pet.vercel.app',
-    },
-  },
-  {
-    image: '/images/projects/dejapp.png',
-    title: 'GoldenKey',
+    title: 'DEJ APP',
     type: 'Team',
     description:
-      'A real estate management platform with CRUD operations and image uploads.',
+      'The DEJ app simplifies real estate searches with an intuitive interface, detailed property info, and advanced filters. Users can easily browse, save favorites, and find the perfect property.',
     techStacks: [
-      { image: '/images/techStacks/react.png', label: 'React' },
       { image: '/images/techStacks/node.png', label: 'Node.js' },
-      { image: '/images/techStacks/mysql.png', label: 'MySQL' },
+      { image: '/images/techStacks/react.png', label: 'React Native' },
+      { image: '/images/techStacks/html5.png', label: 'HTML5' },
+      { image: '/images/techStacks/css.png', label: 'CSS3' },
+      { image: '/images/techStacks/api.png', label: 'REST API' },
+      { image: '/images/techStacks/postman.svg', label: 'Postman' },
+      { image: '/images/techStacks/api.svg', label: 'API Integration' },
     ],
     links: {
-      github: 'https://github.com/yourname/goldenkey',
+      github: 'https://github.com/yoo-ran/dejapp',
+      live: 'https://ai-pet.vercel.app',
     },
   },
 ];
