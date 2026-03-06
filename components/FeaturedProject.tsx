@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Project } from '@/lib/projects-data';
 
 import TechChip from './ui/TechChip';
@@ -10,7 +11,7 @@ type Props = {
 
 export default function FeaturedProject({ project }: Props) {
   return (
-    <div className="flexCol justify-start gap-y-4 w-full bg-black p-4 text-beige rounded-sm md:rounded-md lg:rounded-lg lg:p-6 xl:p-7 xl:gap-y-5 dark:border-beige">
+    <div className="flexCol justify-start gap-y-4 w-full h-full bg-black p-4 text-beige rounded-sm md:rounded-md lg:rounded-lg lg:p-6 xl:p-7 xl:gap-y-5 dark:border-beige">
       <div className="w-full flexCol justify-between gap-4 lg:gap-x-10">
         <div className="flexRow items-start gap-x-3">
           <div className="relative w-full lg:w-1/2 aspect-16/9">
@@ -22,9 +23,11 @@ export default function FeaturedProject({ project }: Props) {
             />
           </div>
           <div className="flexCol gap-6 lg:w-1/2">
-            <div className="flexRow items-end gap-x-2">
+            <div className="flexCol  gap-y-1">
               <p className="ty-h2 leading-none">{project.title}</p>
-              <span className="ty-tech-btn ">({project.type} Project)</span>
+              <span className="ty-tech-btn italic ">
+                {project.type} Project · {project.platform}
+              </span>
             </div>
             <p className="ty-body1">{project.description}</p>
             <div className="w-full flexRow flex-wrap justify-start gap-1 ">
@@ -35,28 +38,21 @@ export default function FeaturedProject({ project }: Props) {
           </div>
         </div>
 
-        <div className=" w-full  h-1/3 flexCol justify-start gap-y-2 lg:gap-y-4">
+        <div className=" w-fullflexCol justify-start gap-y-2 lg:gap-y-4">
           <div className="hidden md:block">
-            <p className="ty-h3">Key Features</p>
-            <ul className="flexCol lg:gap-y-2 list-disc ml-4 ty-body1 lg:mt-3">
+            <p className="ty-h3">Highlights</p>
+            <ul className="flexCol lg:gap-y-1 list-disc ml-4 ty-body1 lg:mt-3">
               <li>
-                Login / Logout: Impelemented secure user authentication using JWT and
-                session management
+                Implemented secure authentication and session flow for protected
+                account-based access
               </li>
               <li>
-                Upload Property: Created a input form to save property details with image
-                uploads in the database
+                Built property upload and edit features with CRUD functionality, making
+                listing management more efficient
               </li>
               <li>
-                Excel Upload: Built Excel upload and AG-Grid table integration for bulk
-                property import, editing and database sync.
-              </li>
-              <li>
-                Property Detail: Implemented editable property pages withe CRUD feautures.
-              </li>
-              <li>
-                Search / Filter: Designed an advanced filters and keyword search for quick
-                access
+                Added Excel import and AG Grid integration to reduce repetitive manual
+                entry for large datasets
               </li>
             </ul>
           </div>
@@ -64,6 +60,7 @@ export default function FeaturedProject({ project }: Props) {
       </div>
       <div className="flexRow justify-end gap-x-2 border-t-2 w-full pt-3 lg:pt-6 lg:mt-4">
         <LinkChip links={project.links} />
+        <Link href={`/projects/${project.slug}`}>View Details</Link>
       </div>
     </div>
   );

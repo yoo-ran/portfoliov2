@@ -19,9 +19,11 @@ export default function ProjectCard({ project }: Props) {
         />
       </div>
       <div className=" w-full h-1/3 flexCol justify-start gap-y-2">
-        <div className="flexRow justify-start gap-x-2">
+        <div className="flexCol  gap-y-1">
           <p className="ty-h3 leading-none">{project.title}</p>
-          <span className="ty-tech-btn ">({project.type} Project)</span>
+          <span className="ty-tech-btn italic">
+            {project.type} Project · {project.platform}
+          </span>
         </div>
         <p className="ty-body2">{project.description}</p>
         <div className="w-full flexRow flex-wrap justify-start gap-1 mt-4">

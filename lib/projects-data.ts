@@ -10,9 +10,11 @@ export type ProjectLinks = {
 };
 
 export type Project = {
+  slug: string;
   image: string;
   title: string;
   type: 'Team' | 'Individual';
+  platform: string;
   description: string;
   techStacks: TechStack[];
   links: ProjectLinks;
@@ -21,19 +23,19 @@ export type Project = {
 export const PROJECTS: Project[] = [
   {
     image: '/images/projects/goldenkey.jpg',
+    slug: 'golden-key',
     title: 'Golden Key',
     type: 'Team',
+    platform: 'Full-stack Web App',
     description:
-      ' This project is a full-stack CRUD application built with React.js, Node.js, and MySQL for a real estate business to upload, manage, and filter properties, improving listing organization.',
+      'Full-stack real estate management platform for uploading, editing, and filtering property listings with image handling and database integration.',
     techStacks: [
       { image: '/images/techStacks/node.png', label: 'Node.js' },
       { image: '/images/techStacks/react.png', label: 'React' },
-      { image: '/images/techStacks/html5.png', label: 'HTML5' },
-      { image: '/images/techStacks/css.png', label: 'CSS3' },
       { image: '/images/techStacks/tailwind.png', label: 'Tailwind' },
       { image: '/images/techStacks/mysql.png', label: 'MySQL' },
       { image: '/images/techStacks/express.png', label: 'Express' },
-      { image: '/images/techStacks/postman.svg', label: 'Postman' },
+      { image: '/images/techStacks/jwt.webp', label: 'JWT' },
     ],
     links: {
       github: 'https://github.com/yoo-ran/goldenkey',
@@ -42,18 +44,18 @@ export const PROJECTS: Project[] = [
   },
   {
     image: '/images/projects/dejapp.png',
+    slug: 'dej-app',
     title: 'DEJ APP',
     type: 'Team',
+    platform: 'Mobile App',
     description:
-      'The DEJ app simplifies real estate searches with an intuitive interface, detailed property info, and advanced filters. Users can easily browse, save favorites, and find the perfect property.',
+      'A real estate mobile app designed to simplify property discovery with intuitive search, detailed listing views, and saved favorites for a smoother browsing experience.',
     techStacks: [
       { image: '/images/techStacks/node.png', label: 'Node.js' },
       { image: '/images/techStacks/react.png', label: 'React Native' },
-      { image: '/images/techStacks/html5.png', label: 'HTML5' },
       { image: '/images/techStacks/css.png', label: 'CSS3' },
       { image: '/images/techStacks/api.png', label: 'REST API' },
       { image: '/images/techStacks/postman.svg', label: 'Postman' },
-      { image: '/images/techStacks/api.svg', label: 'API Integration' },
     ],
     links: {
       github: 'https://github.com/yoo-ran/dejapp',
