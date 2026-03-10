@@ -10,10 +10,10 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <>
+    <div className="w-full">
       <Header menuOpen={menuOpen} onToggleMenu={toggleMenu} />
       <MobileMenu open={menuOpen} onClose={closeMenu} />
-      <main>{children}</main>
-    </>
+      <main className="w-full">{children}</main>
+    </div>
   );
 }

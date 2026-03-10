@@ -21,7 +21,7 @@ export default function TechChip({
 
   return (
     <div
-      className={`flexRow gap-x-0.5 rounded-sm border px-1 py-0.5 bg-beige/70 dark:bg-black ${borderColor}`}
+      className={`flexRow gap-x-0.5 rounded-sm border p-1 bg-beige/70 dark:bg-black ${borderColor}`}
     >
       <div className="relative aspect-square w-4">
         {isLucide ? (
@@ -38,7 +38,7 @@ export default function TechChip({
         )}
       </div>
 
-      <p className="ty-tech-btn whitespace-nowrap overflow-hidden text-black dark:text-beige">
+      <p className="ty-tech-btn whitespace-nowrap overflow-hidden text-black dark:text-beige p-1">
         {item.label}
       </p>
     </div>

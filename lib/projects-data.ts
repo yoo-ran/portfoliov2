@@ -22,7 +22,7 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
-    image: '/images/projects/goldenkey.jpg',
+    image: '/images/projects/golden-key/goldenkey.jpg',
     slug: 'golden-key',
     title: 'Golden Key',
     type: 'Team',
@@ -43,7 +43,7 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    image: '/images/projects/dejapp.png',
+    image: '/images/projects/dej-app/dejapp.png',
     slug: 'dej-app',
     title: 'DEJ APP',
     type: 'Team',

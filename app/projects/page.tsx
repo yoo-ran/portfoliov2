@@ -37,7 +37,7 @@ export default function ProjectsPage() {
   const clearAll = () => setSelectedTech([]);
 
   return (
-    <main className="flexCol gap-y-14 lg:gap-y-22 xl:gap-y-26 w-full py-36">
+    <main className="flexCol gap-y-14 lg:gap-y-22 xl:gap-y-26 w-full  py-36">
       {/* INTRO */}
       <section className="flexCol gap-y-4 w-full">
         <div className="w-full">

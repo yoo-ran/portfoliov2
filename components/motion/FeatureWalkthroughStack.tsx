@@ -1,6 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
+import DemoVideo from '../DemoVideo';
 
 export type FeatureDemoItem = {
   title: string;
@@ -13,33 +15,23 @@ type Props = {
   items: FeatureDemoItem[];
 };
 
-function DemoCard({ item, index }: { item: FeatureDemoItem; index: number }) {
+function DemoCard({ item }: { item: FeatureDemoItem }) {
   return (
     <motion.article
-      initial={{ opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="grid grid-cols-2 gap-x-16 items-center rounded-3xl border p-5 space-y-4 lg:min-h-[30rem] bg-black"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.35, ease: 'easeOut' }}
+      className="grid md:grid-cols-2 gap-y-2 gap-x-16 items-center rounded-3xl border p-5 space-y-4 lg:min-h-[30rem] bg-black"
     >
-      <div className="overflow-hidden rounded-2xl border h-full">
-        <div className="relative aspect-video w-full h-full">
-          <iframe
-            className="absolute inset-0 h-full w-full"
-            src={`https://www.youtube.com/embed/${item.youtubeId}`}
-            title={item.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
-      </div>
+      <DemoVideo youtubeId={item.youtubeId} title={item.title} />
 
       <div className="flexCol gap-y-4 text-beige">
-        <h3 className="text-xl font-medium">{item.title}</h3>
-        <p className="mt-2 leading-7 opacity-80">{item.caption}</p>
+        <h3 className="ty-body1 lg:text-lg font-bold">{item.title}</h3>
+        <p className="ty-body1 opacity-80">{item.caption}</p>
         <ul className="space-y-2">
           {item.points.map((point) => (
-            <li key={point} className="opacity-80">
+            <li key={point} className="ty-body2 opacity-80">
               • {point}
             </li>
           ))}
@@ -49,43 +41,82 @@ function DemoCard({ item, index }: { item: FeatureDemoItem; index: number }) {
   );
 }
 
-function DesktopStack({ items }: Props) {
+function DesktopTabs({ items }: Props) {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <div className="relative hidden md:block">
-      <div className="space-y-24">
-        {items.map((item, index) => (
-          <motion.div
-            key={item.title}
-            className="sticky top-24"
-            initial={{ opacity: 0, y: 40, scale: 0.98 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: false, amount: 0.35 }}
-            transition={{ duration: 0.45, ease: 'easeOut' }}
-            style={{
-              zIndex: items.length - index,
-            }}
-          >
-            <div
-              className="mx-auto max-w-5xl"
-              style={{
-                transform: `translateY(${index * 10}px)`,
-              }}
+    <div className="hidden md:block space-y-6">
+      <div className="flex flex-wrap gap-3">
+        {items.map((item, index) => {
+          const isActive = index === activeIndex;
+
+          return (
+            <button
+              key={item.title}
+              type="button"
+              onClick={() => setActiveIndex(index)}
+              className={`rounded-full border px-4 py-2 ty-body1 transition ${
+                isActive
+                  ? 'bg-black text-beige border-black'
+                  : 'bg-transparent text-black/70 border-black/20 hover:border-black/40 hover:text-black'
+              }`}
             >
-              <DemoCard item={item} index={index} />
-            </div>
+              {item.title}
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="mx-auto max-w-5xl">
+        <AnimatePresence mode="wait">
+          <motion.div key={items[activeIndex].title}>
+            <DemoCard item={items[activeIndex]} />
           </motion.div>
-        ))}
+        </AnimatePresence>
       </div>
     </div>
   );
 }
 
-function MobileList({ items }: Props) {
+function MobileAccordion({ items }: Props) {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <div className="grid gap-6 md:hidden">
-      {items.map((item, index) => (
-        <DemoCard key={item.title} item={item} index={index} />
-      ))}
+    <div className="grid gap-3 md:hidden">
+      {items.map((item, index) => {
+        const isActive = index === activeIndex;
+
+        return (
+          <div
+            key={item.title}
+            className="overflow-hidden rounded-3xl border border-black/10"
+          >
+            <button
+              type="button"
+              onClick={() => setActiveIndex(isActive ? -1 : index)}
+              className="flex w-full items-center justify-between px-4 py-4 text-left bg-white"
+            >
+              <span className="ty-body1 font-medium">{item.title}</span>
+              <span className="text-xl leading-none">{isActive ? '−' : '+'}</span>
+            </button>
+
+            <AnimatePresence initial={false}>
+              {isActive && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.25, ease: 'easeOut' }}
+                >
+                  <div className=" bg-black">
+                    <DemoCard item={item} />
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -94,15 +125,13 @@ export default function FeatureWalkthroughStack({ items }: Props) {
   return (
     <section className="space-y-6">
       <div className="max-w-3xl">
-        <h2 className="ty-h3 font-semibold">Core Workflows</h2>
-        <p className="mt-3 leading-7 text-black/70 dark:text-beige/70">
-          A walkthrough of the main product flows built for property upload, bulk data
-          handling, editing, search, and filtering.
+        <p className="ty-body1 mt-3 text-black/70 dark:text-beige/70">
+          Demo videos of the main product workflows, showing how users can upload, manage,
+          edit, search, and filter property listings in one system.
         </p>
       </div>
-
-      <DesktopStack items={items} />
-      <MobileList items={items} />
+      <DesktopTabs items={items} />
+      <MobileAccordion items={items} />
     </section>
   );
 }

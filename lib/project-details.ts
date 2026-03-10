@@ -1,3 +1,5 @@
+import { FolderTree, LucideIcon, Settings, Workflow } from 'lucide-react';
+
 export type TechStack = {
   image: string;
   label: string;
@@ -43,6 +45,7 @@ export type ChallengeItem = {
 };
 
 export type ImpactItem = {
+  icon: LucideIcon;
   label: string;
   description: string;
 };
@@ -194,15 +197,18 @@ export const goldenKeyDetail: ProjectDetail = {
   ],
   impact: [
     {
+      icon: Workflow,
       label: 'Workflow Efficiency',
       description:
         'Made listing upload, editing, and filtering more organized in one system.',
     },
     {
+      icon: Settings,
       label: 'Reduced Manual Work',
       description: 'Bulk Excel import and grid editing reduced repetitive manual entry.',
     },
     {
+      icon: FolderTree,
       label: 'Scalable Management',
       description: 'Supported handling larger sets of property data more effectively.',
     },
