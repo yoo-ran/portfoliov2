@@ -106,7 +106,7 @@ export default function AboutPage() {
             <p className="bg-black w-3 h-3"></p>
             <h2 className="ty-h2 capitalize">tech stacks</h2>
           </div>
-          <div className="w-full grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 justify-start lg:gap-6">
+          <div className="w-full grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 justify-start lg:gap-3">
             {SKILL_CARDS.map((card) => (
               <TechStacksCard key={card.title} data={card} />
             ))}
@@ -121,7 +121,7 @@ export default function AboutPage() {
             <p className="bg-black w-3 h-3"></p>
             <h2 className="ty-h2 capitalize">more about me</h2>
           </div>
-          <div className="w-full grid grid-cols-1 gap-3 md:grid-cols-2  justify-start lg:gap-6">
+          <div className="w-full grid grid-cols-1 gap-3 md:grid-cols-2  justify-start lg:gap-3">
             {MORE_ABOUT_ME.map((card) => (
               <MoreAboutMeCard
                 key={card.title}

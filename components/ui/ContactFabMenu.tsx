@@ -27,8 +27,9 @@ export function ContactFabMenu() {
       className="fixed bottom-2 right-2 md:bottom-4 md:right-4 lg:bottom-6 lg:right-6 xl:bottom-8 xl:right-8
                  flexCol gap-y-2 z-50"
     >
-      {CONTACT_FAB_ITEMS.map((itemData) => {
+      {CONTACT_FAB_ITEMS.map((itemData, index) => {
         const Icon = itemData.icon;
+        const isLast = index === CONTACT_FAB_ITEMS.length - 1;
 
         return (
           <motion.a
@@ -41,9 +42,10 @@ export function ContactFabMenu() {
             whileHover={{ y: -2, scale: 1.08 }}
             whileTap={{ scale: 0.92 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="fab-item  rounded-full
-                       p-2 md:p-3 lg:p-3 xl:p-5
-                       bg-highlight shadow-sm/50"
+            className={`fab-item rounded-full
+        p-2 md:p-3 lg:p-3 xl:p-5
+        shadow-sm/50
+        ${isLast ? 'bg-black' : 'bg-highlight'}`}
           >
             <Icon className="text-beige w-4 h-4 md:w-6 md:h-6 lg:w-5 lg:h-5 xl:w-10 xl:h-10" />
           </motion.a>

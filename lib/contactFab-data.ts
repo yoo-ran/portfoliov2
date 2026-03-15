@@ -1,7 +1,7 @@
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin, Github, ArrowUp } from 'lucide-react';
 
 export type ContactFabItem = {
-  id: 'email' | 'linkedin' | 'github';
+  id: 'email' | 'linkedin' | 'github' | 'top';
   label: string;
   href: string;
   icon: React.ElementType;
@@ -28,5 +28,11 @@ export const CONTACT_FAB_ITEMS: ContactFabItem[] = [
     href: 'https://github.com/yoo-ran',
     icon: Github,
     external: true,
+  },
+  {
+    id: 'top',
+    label: 'Top',
+    href: '#top',
+    icon: ArrowUp,
   },
 ];

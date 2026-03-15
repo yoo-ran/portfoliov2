@@ -19,8 +19,14 @@ export default function Header({ menuOpen, onToggleMenu }: HeaderProps) {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-4 lg:top-12 xl:top-12 z-50 flexRow border rounded-md w-1/4 md:w-1/3 lg:w-1/4 xl:w-1/5 px-4 py-1 lg:py- xl:px-4 xl:py-3 backdrop-blur-md">
-      <p className="font-logo font-bold italic text-lg md:text-xl lg:text-2xl">YR</p>
+    <header
+      className="fixed top-4 left-1/2 -translate-x-1/2 z-50
+    flexRow border rounded-md
+    w-[20%] md:w-[30%] lg:w-[20%] xl:w-[28%]
+    px-4 py-1 xl:px-4 xl:py-3
+    backdrop-blur-md"
+    >
+      <p className="font-logo font-bold italic text-md md:text-xl lg:text-2xl">yr</p>
       {/* Desktop nav */}
       <nav className="hidden md:flex gap-x-2 lg:gap-x-2 uppercase  ">
         {NAV.map((item) => {

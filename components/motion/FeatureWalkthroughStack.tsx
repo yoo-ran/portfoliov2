@@ -22,7 +22,7 @@ function DemoCard({ item }: { item: FeatureDemoItem }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
-      className="grid md:grid-cols-2 gap-y-2 gap-x-16 items-center rounded-3xl border p-5 space-y-4 lg:min-h-[30rem] bg-black"
+      className="grid md:grid-cols-2 gap-y-2 gap-x-16 rounded-3xl border p-5 space-y-4 lg:min-h-[30rem] bg-black"
     >
       <DemoVideo youtubeId={item.youtubeId} title={item.title} />
 
@@ -46,7 +46,7 @@ function DesktopTabs({ items }: Props) {
 
   return (
     <div className="hidden md:block space-y-6">
-      <div className="flex flex-wrap gap-3">
+      <div className="flex justify-center flex-wrap gap-3">
         {items.map((item, index) => {
           const isActive = index === activeIndex;
 
@@ -55,7 +55,7 @@ function DesktopTabs({ items }: Props) {
               key={item.title}
               type="button"
               onClick={() => setActiveIndex(index)}
-              className={`rounded-full border px-4 py-2 ty-body1 transition ${
+              className={`rounded-full border px-4 py-2 ty-body2 transition cursor-pointer ${
                 isActive
                   ? 'bg-black text-beige border-black'
                   : 'bg-transparent text-black/70 border-black/20 hover:border-black/40 hover:text-black'
@@ -123,13 +123,11 @@ function MobileAccordion({ items }: Props) {
 
 export default function FeatureWalkthroughStack({ items }: Props) {
   return (
-    <section className="space-y-6">
-      <div className="max-w-3xl">
-        <p className="ty-body1 mt-3 text-black/70 dark:text-beige/70">
-          Demo videos of the main product workflows, showing how users can upload, manage,
-          edit, search, and filter property listings in one system.
-        </p>
-      </div>
+    <section className="space-y-6 lg:space-y-10 flexCol items-center">
+      <p className="ty-body1 text-black/70 w-full text-center dark:text-beige/70">
+        Demo videos of the main product workflows, showing how users can upload, manage,
+        edit, search, and filter property listings in one system.
+      </p>
       <DesktopTabs items={items} />
       <MobileAccordion items={items} />
     </section>

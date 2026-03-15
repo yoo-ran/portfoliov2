@@ -1,5 +1,21 @@
-import { FolderTree, LucideIcon, Settings, Workflow } from 'lucide-react';
+import {
+  Blocks,
+  Code,
+  Database,
+  FolderTree,
+  FolderUp,
+  KeyRound,
+  LayoutGrid,
+  LucideIcon,
+  Settings,
+  Swords,
+  Workflow,
+} from 'lucide-react';
 
+export type ProjectNavItem = {
+  id: string;
+  label: string;
+};
 export type TechStack = {
   image: string;
   label: string;
@@ -23,6 +39,7 @@ export type ProjectSection = {
 };
 
 export type ContributionItem = {
+  icon: LucideIcon;
   title: string;
   description: string;
 };
@@ -33,11 +50,13 @@ export type WorkflowItem = {
 };
 
 export type TechnicalDecisionItem = {
+  icon: LucideIcon;
   title: string;
   description: string;
 };
 
 export type ChallengeItem = {
+  icon: LucideIcon;
   title: string;
   problem: string;
   approach: string;
@@ -76,6 +95,7 @@ export type ProjectDetail = {
   learnings: string[];
   nextSteps: string[];
   featureDemos: FeatureDemoItem[];
+  sectionNav: ProjectNavItem[];
 };
 
 export const goldenKeyDetail: ProjectDetail = {
@@ -99,9 +119,23 @@ export const goldenKeyDetail: ProjectDetail = {
     { image: '/images/techStacks/jwt.webp', label: 'JWT' },
   ],
   links: [
-    { label: 'GitHub', href: 'https://github.com/your-link' },
-    { label: 'Live Demo', href: 'https://your-demo-link.com' },
+    { label: 'GitHub', href: 'https://github.com/yoo-ran/goldenkey' },
+    { label: 'Product Walkthrough', href: '#product-walkthrough' },
   ],
+
+  sectionNav: [
+    { id: 'problem', label: 'Problem' },
+    { id: 'solution', label: 'Solution' },
+    { id: 'contributions', label: 'Contributions' },
+    { id: 'workflows', label: 'Workflow' },
+    { id: 'technical-decisions', label: 'Technical Decisions' },
+    { id: 'challenges', label: 'Challenges' },
+    { id: 'impacts', label: 'Impact' },
+    { id: 'product-walkthrough', label: 'Product Walkthrough' },
+    { id: 'learnings', label: 'Learnings' },
+    { id: 'next-steps', label: 'Next Steps' },
+  ],
+
   overview: {
     title: 'Overview',
     content:
@@ -119,21 +153,25 @@ export const goldenKeyDetail: ProjectDetail = {
   },
   contributions: [
     {
+      icon: KeyRound,
       title: 'Authentication Flow',
       description:
         'Implemented secure login/logout and session handling to support protected account-based access.',
     },
     {
+      icon: FolderUp,
       title: 'Property CRUD',
       description:
         'Built property upload, detail, edit, and delete flows for managing listings more efficiently.',
     },
     {
+      icon: Database,
       title: 'Bulk Data Management',
       description:
         'Integrated Excel upload and AG Grid editing to reduce repetitive manual entry and support larger datasets.',
     },
     {
+      icon: Blocks,
       title: 'Backend Integration',
       description:
         'Connected frontend workflows with Node.js, Express, and MySQL for persistent data handling.',
@@ -163,16 +201,19 @@ export const goldenKeyDetail: ProjectDetail = {
   ],
   technicalDecisions: [
     {
-      title: 'Using AG Grid for bulk editing',
+      icon: LayoutGrid,
+      title: 'AG Grid for bulk editing',
       description:
         'AG Grid was chosen because the project needed spreadsheet-like interaction for bulk property management, making large listing datasets easier to edit and review.',
     },
     {
+      icon: Database,
       title: 'MySQL for structured listing data',
       description:
         'MySQL supported the relational nature of property records, helping keep listing information organized and queryable.',
     },
     {
+      icon: Code,
       title: 'React for UI workflow clarity',
       description:
         'React helped structure reusable UI components for forms, listing tables, and detail views across the application.',
@@ -180,6 +221,7 @@ export const goldenKeyDetail: ProjectDetail = {
   ],
   challenges: [
     {
+      icon: Swords,
       title: 'Managing bulk listing data',
       problem: 'Handling many property records manually was repetitive and inefficient.',
       approach:
@@ -187,6 +229,7 @@ export const goldenKeyDetail: ProjectDetail = {
       result: 'This made larger datasets easier to review, edit, and maintain.',
     },
     {
+      icon: Swords,
       title: 'Keeping listing workflows organized',
       problem: 'Property data, edits, and detail views needed a more connected flow.',
       approach:
@@ -225,12 +268,6 @@ export const goldenKeyDetail: ProjectDetail = {
     'Optimize image upload and management flow',
   ],
 
-  //   <iframe width="512" height="512" src="https://www.youtube.com/embed/2NY9xY6h01s" title="Golden Key Feature - Upload Property" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  // <iframe width="512" height="512" src="https://www.youtube.com/embed/uWogRpcHPqI" title="Golden Key Feature - Upload Excel File" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  // <iframe width="458" height="687" src="https://www.youtube.com/embed/d1bNx1v0ajg" title="Golden Key Feature - Excel has been changed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  // <iframe width="512" height="512" src="https://www.youtube.com/embed/6_3yzysPa3E" title="Golden Key Feature - Property Detail" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  // <iframe width="512" height="512" src="https://www.youtube.com/embed/YHwr3I-KOjU" title="Golden Key Feature - Search Properties" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  // <iframe width="512" height="512" src="https://www.youtube.com/embed/feEBMU2NjNA" title="Golden Key Feature - Filter Properties" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   featureDemos: [
     {
       title: '1. Property Upload',

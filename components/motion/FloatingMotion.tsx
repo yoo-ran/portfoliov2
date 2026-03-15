@@ -26,10 +26,9 @@ export default function FloatingMotion({
     direction === 'vertical'
       ? { y: [0, -distance, 0] }
       : direction === 'horizontal'
-        ? { x: [0, distance, 0, -distance, 0] }
+        ? { x: [0, distance, 0] }
         : {
-            y: [0, -distance, 0],
-            x: [0, distance * 0.6, 0, -distance * 0.6, 0],
+            x: [0, distance, 0],
           };
 
   return (
