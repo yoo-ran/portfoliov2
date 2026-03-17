@@ -4,12 +4,22 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import DemoVideo from '../DemoVideo';
 
-export type FeatureDemoItem = {
-  title: string;
-  caption: string;
-  youtubeId: string;
-  points: string[];
-};
+export type FeatureDemoItem =
+  | {
+      title: string;
+      caption: string;
+      points: string[];
+      mediaType: 'video';
+      youtubeId: string;
+    }
+  | {
+      title: string;
+      caption: string;
+      points: string[];
+      mediaType: 'image';
+      image: string;
+      imageAlt?: string;
+    };
 
 type Props = {
   items: FeatureDemoItem[];
@@ -22,11 +32,21 @@ function DemoCard({ item }: { item: FeatureDemoItem }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
-      className="grid md:grid-cols-2 gap-y-2 gap-x-16 rounded-3xl border p-5 space-y-4 lg:min-h-[30rem] bg-black"
+      className="grid items-center gap-x-16 gap-y-6 rounded-3xl border bg-black p-5 md:grid-cols-2 lg:min-h-[30rem]"
     >
-      <DemoVideo youtubeId={item.youtubeId} title={item.title} />
+      <div className="flex justify-center rounded-2xl lg:min-h-[24rem] lg:max-h-[28rem] w-full ">
+        {item.mediaType === 'video' ? (
+          <DemoVideo youtubeId={item.youtubeId} title={item.title} />
+        ) : (
+          <img
+            src={item.image}
+            alt={item.imageAlt ?? item.title}
+            className="h-auto w-full max-w-[16rem] rounded-2xl object-contain lg:max-w-[18rem]"
+          />
+        )}
+      </div>
 
-      <div className="flexCol gap-y-4 text-beige">
+      <div className="flexCol gap-y-4 text-beige ">
         <h3 className="ty-body1 lg:text-lg font-bold">{item.title}</h3>
         <p className="ty-body1 opacity-80">{item.caption}</p>
         <ul className="space-y-2">
@@ -124,10 +144,6 @@ function MobileAccordion({ items }: Props) {
 export default function FeatureWalkthroughStack({ items }: Props) {
   return (
     <section className="space-y-6 lg:space-y-10 flexCol items-center">
-      <p className="ty-body1 text-black/70 w-full text-center dark:text-beige/70">
-        Demo videos of the main product workflows, showing how users can upload, manage,
-        edit, search, and filter property listings in one system.
-      </p>
       <DesktopTabs items={items} />
       <MobileAccordion items={items} />
     </section>

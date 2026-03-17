@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Project } from '@/lib/projects-data';
+import { Project } from '@/lib/projects/projects-data';
 
 import TechChip from './ui/TechChip';
 import LinkChip from './ui/LinkChip';
@@ -60,7 +60,6 @@ export default function FeaturedProject({ project }: Props) {
       </div>
       <div className="flexRow justify-end gap-x-2 border-t-2 w-full pt-3 lg:pt-6 lg:mt-4">
         <LinkChip links={project.links} />
-        <Link href={`/projects/${project.slug}`}>View Details</Link>
       </div>
     </div>
   );

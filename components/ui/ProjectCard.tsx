@@ -1,7 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import TechChip from './TechChip';
 import LinkChip from './LinkChip';
-import { Project } from '@/lib/projects-data';
+import { Project } from '@/lib/projects/projects-data';
 
 type Props = {
   project: Project;

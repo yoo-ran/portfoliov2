@@ -1,4 +1,4 @@
-import { PROJECTS } from '@/lib/projects-data';
+import { PROJECTS } from '@/lib/projects/projects-data';
 import ProjectCard from './ui/ProjectCard';
 
 type Props = {

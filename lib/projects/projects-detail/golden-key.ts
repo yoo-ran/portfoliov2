@@ -1,3 +1,5 @@
+import { ProjectDetail } from './types';
+import { DEFAULT_PROJECT_SECTION_NAV } from './constants';
 import {
   Blocks,
   Code,
@@ -6,97 +8,10 @@ import {
   FolderUp,
   KeyRound,
   LayoutGrid,
-  LucideIcon,
   Settings,
   Swords,
   Workflow,
 } from 'lucide-react';
-
-export type ProjectNavItem = {
-  id: string;
-  label: string;
-};
-export type TechStack = {
-  image: string;
-  label: string;
-};
-
-export type ProjectLink = {
-  label: string;
-  href: string;
-};
-
-export type ProjectMeta = {
-  teamType: string;
-  platform: string;
-  timeline: string;
-  role: string;
-};
-
-export type ProjectSection = {
-  title: string;
-  content: string;
-};
-
-export type ContributionItem = {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-};
-
-export type WorkflowItem = {
-  title: string;
-  points: string[];
-};
-
-export type TechnicalDecisionItem = {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-};
-
-export type ChallengeItem = {
-  icon: LucideIcon;
-  title: string;
-  problem: string;
-  approach: string;
-  result: string;
-};
-
-export type ImpactItem = {
-  icon: LucideIcon;
-  label: string;
-  description: string;
-};
-
-export type FeatureDemoItem = {
-  title: string;
-  caption: string;
-  youtubeId: string;
-  points: string[];
-};
-
-export type ProjectDetail = {
-  slug: string;
-  title: string;
-  summary: string;
-  heroImage: string;
-  meta: ProjectMeta;
-  techStacks: TechStack[];
-  links: ProjectLink[];
-  overview: ProjectSection;
-  problem: ProjectSection;
-  solution: ProjectSection;
-  contributions: ContributionItem[];
-  workflows: WorkflowItem[];
-  technicalDecisions: TechnicalDecisionItem[];
-  challenges: ChallengeItem[];
-  impact: ImpactItem[];
-  learnings: string[];
-  nextSteps: string[];
-  featureDemos: FeatureDemoItem[];
-  sectionNav: ProjectNavItem[];
-};
 
 export const goldenKeyDetail: ProjectDetail = {
   slug: 'golden-key',
@@ -123,18 +38,7 @@ export const goldenKeyDetail: ProjectDetail = {
     { label: 'Product Walkthrough', href: '#product-walkthrough' },
   ],
 
-  sectionNav: [
-    { id: 'problem', label: 'Problem' },
-    { id: 'solution', label: 'Solution' },
-    { id: 'contributions', label: 'Contributions' },
-    { id: 'workflows', label: 'Workflow' },
-    { id: 'technical-decisions', label: 'Technical Decisions' },
-    { id: 'challenges', label: 'Challenges' },
-    { id: 'impacts', label: 'Impact' },
-    { id: 'product-walkthrough', label: 'Product Walkthrough' },
-    { id: 'learnings', label: 'Learnings' },
-    { id: 'next-steps', label: 'Next Steps' },
-  ],
+  sectionNav: DEFAULT_PROJECT_SECTION_NAV,
 
   overview: {
     title: 'Overview',
@@ -271,6 +175,7 @@ export const goldenKeyDetail: ProjectDetail = {
   featureDemos: [
     {
       title: '1. Property Upload',
+      mediaType: 'video',
       youtubeId: '2NY9xY6h01s',
       caption:
         'Built a property upload workflow that helps business owners add and organize listing information more efficiently.',
@@ -282,6 +187,7 @@ export const goldenKeyDetail: ProjectDetail = {
     },
     {
       title: '2. Excel Upload & AG Grid',
+      mediaType: 'video',
       youtubeId: 'uWogRpcHPqI',
       caption:
         'Created a bulk listing workflow using Excel upload and AG Grid for spreadsheet-like property management.',
@@ -293,6 +199,7 @@ export const goldenKeyDetail: ProjectDetail = {
     },
     {
       title: '3. Database Synchronization',
+      mediaType: 'video',
       youtubeId: 'd1bNx1v0ajg',
       caption:
         'Implemented synchronization logic to compare uploaded Excel data with existing database records.',
@@ -304,6 +211,7 @@ export const goldenKeyDetail: ProjectDetail = {
     },
     {
       title: '4. Property Detail Management',
+      mediaType: 'video',
       youtubeId: '6_3yzysPa3E',
       caption:
         'Developed dynamic property detail workflows for viewing, editing, saving, and deleting listings.',
@@ -316,6 +224,7 @@ export const goldenKeyDetail: ProjectDetail = {
     },
     {
       title: '5. Search',
+      mediaType: 'video',
       youtubeId: 'YHwr3I-KOjU',
       caption:
         'Built a search flow that helps users find listings by building name or address.',
@@ -327,6 +236,7 @@ export const goldenKeyDetail: ProjectDetail = {
     },
     {
       title: '6. Filter',
+      mediaType: 'video',
       youtubeId: 'feEBMU2NjNA',
       caption:
         'Added real-time filtering to help users narrow listings by relevant property conditions.',
@@ -339,12 +249,3 @@ export const goldenKeyDetail: ProjectDetail = {
     },
   ],
 };
-
-export const PROJECT_DETAILS: ProjectDetail[] = [
-  goldenKeyDetail,
-  // dejAppDetail
-];
-
-export function getProjectBySlug(slug: string) {
-  return PROJECT_DETAILS.find((project) => project.slug === slug);
-}

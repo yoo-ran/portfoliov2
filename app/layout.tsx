@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Abel, Titillium_Web, Pacifico } from 'next/font/google';
+import { Inter, Abel, Titillium_Web, Praise } from 'next/font/google';
 import './globals.css';
 import SiteShell from '@/components/SiteShell';
 import Footer from '@/components/Footer';
@@ -26,10 +26,10 @@ const abel = Abel({
 });
 
 // Label / UI font
-const pacifico = Pacifico({
+const praise = Praise({
   subsets: ['latin'],
   weight: ['400'],
-  variable: '--font-pacifico',
+  variable: '--font-praise',
 });
 
 export const metadata: Metadata = {

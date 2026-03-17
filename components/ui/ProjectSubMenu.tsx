@@ -40,7 +40,7 @@ export default function ProjectSubmenu({ items }: Props) {
             <button
               type="button"
               onClick={() => setIsOpen((prev) => !prev)}
-              className={`text-sm  font-medium flexCol h-full w-full cursor-pointer px-3 py-3 bg-black/80 transition-transform hover:bg-black
+              className={`flexCol h-full w-full cursor-pointer px-3 py-3 bg-black/80 transition-transform hover:bg-black
                 ${isOpen ? 'translate-x-30 rounded-l-lg' : 'translate-x-0 '}`}
               aria-expanded={isOpen}
               aria-controls="project-submenu"
@@ -57,7 +57,7 @@ export default function ProjectSubmenu({ items }: Props) {
                   <li key={item.id}>
                     <a
                       href={`#${item.id}`}
-                      className="whitespace-nowrap ty-subtitle text-base  hover:border-b"
+                      className="whitespace-nowrap ty-subtitle md:text-sm lg:text-base hover:border-b"
                     >
                       {item.label}
                     </a>

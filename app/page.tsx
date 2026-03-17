@@ -1,4 +1,4 @@
-import { PROJECTS } from '@/lib/projects-data';
+import { PROJECTS } from '@/lib/projects/projects-data';
 import ProjectCard from '@/components/ui/ProjectCard';
 import Reveal from '@/components/motion/RevealScroll';
 

@@ -5,7 +5,7 @@ import { SlidersHorizontal } from 'lucide-react';
 
 import FilterChip from '@/components/ui/FilterChip';
 import Projects from '@/components/Projects';
-import { PROJECTS } from '@/lib/projects-data';
+import { PROJECTS } from '@/lib/projects/projects-data';
 
 export default function ProjectsPage() {
   const [selectedTech, setSelectedTech] = useState<string[]>([]);

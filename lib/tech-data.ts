@@ -1,4 +1,4 @@
-import { PROJECTS } from './projects-data';
+import { PROJECTS } from './projects/projects-data';
 
 export type TechFilter = {
   label: string;

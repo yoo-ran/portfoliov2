@@ -6,7 +6,7 @@ export type TechStack = {
 
 export type ProjectLinks = {
   github?: string;
-  live?: string;
+  detail?: string;
 };
 
 export type Project = {
@@ -39,7 +39,7 @@ export const PROJECTS: Project[] = [
     ],
     links: {
       github: 'https://github.com/yoo-ran/goldenkey',
-      live: 'https://ai-pet.vercel.app',
+      detail: 'golden-key',
     },
   },
   {
@@ -59,7 +59,7 @@ export const PROJECTS: Project[] = [
     ],
     links: {
       github: 'https://github.com/yoo-ran/dejapp',
-      live: 'https://ai-pet.vercel.app',
+      detail: 'dej-app',
     },
   },
 ];

@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowBigDown, ArrowBigRight, ArrowLeft, ArrowRight } from 'lucide-react';
-import { PROJECT_DETAILS, getProjectBySlug } from '@/lib/project-details';
+import { PROJECT_DETAILS, getProjectBySlug } from '@/lib/projects/projects-detail/index';
 import TechChip from '@/components/ui/TechChip';
 import FeatureWalkthroughStack from '@/components/motion/FeatureWalkthroughStack';
 import Reveal from '@/components/motion/RevealScroll';
@@ -127,7 +127,7 @@ export default async function ProjectDetailPage({ params }: Props) {
       <Reveal>
         <section id="contributions" className="space-y-6 lg:space-y-8">
           <h2 className="ty-h2 font-semibold">My Contributions</h2>
-          <div className="grid gap-3 lg:gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-3 lg:gap-3 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
             {project.contributions.map((item) => (
               <article
                 key={item.title}

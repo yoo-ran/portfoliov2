@@ -13,8 +13,8 @@ export default function DemoVideo({
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className="overflow-hidden rounded-2xl border-2 border-beige h-full">
-      <div className="relative aspect-[11/12] lg:aspect-video w-full h-full bg-black">
+    <div className="overflow-hidden rounded-2xl border-2 border-beige w-full h-auto">
+      <div className="relative w-full h-full bg-black">
         {isLoading && (
           <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/70">
             <Loader2 className="h-8 w-8 animate-spin text-beige" />
