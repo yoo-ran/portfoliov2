@@ -1,6 +1,7 @@
 'use client';
 
 import Reveal from '@/components/motion/RevealScroll';
+import FadeUp from '@/components/motion/FadeUp';
 
 import TechStacksCard from '@/components/ui/TechStackCard';
 import MoreAboutMeCard from '@/components/ui/MoreAboutMeCard';
@@ -16,25 +17,30 @@ export default function AboutPage() {
   return (
     <main className="flexCol gap-y-14 lg:gap-y-30 xl:gap-y-26 w-10/12 mx-auto py-36">
       {/* HERO SECTION */}
-      <section className="flexCol gap-y-4 w-full">
-        <div className="flexRow items-end w-full">
-          <div>
-            <p className="ty-subtitle capitalize leading-none">about me</p>
-            <h1 className="ty-header-title leading-none uppercase">yooran kim</h1>
+      <section className="flexRow gap-y-4 w-10/12 self-center">
+        <FadeUp>
+          <div className="flexCol w-full space-y-6">
+            <div>
+              <p className="ty-header lg:text-[5rem] leading-none flexRow items-end gap-x-4">
+                Hi, my <br />
+                name is <h1 className="font-logo font-bold leading-none">Yooran</h1>
+              </p>
+            </div>
+            <div className="w-full md:w-2/3 ty-subtitle">
+              I build web experiences with a strong focus on usability, consistency, and
+              clean implementation.
+            </div>
           </div>
-          <div className="relative w-1/4 aspect-3/4 md:w-1/6">
-            <Image
-              src="/images/hero.png"
-              alt="Hero"
-              fill
-              className="object-cover -z-10"
-              priority
-            />
-          </div>
-        </div>
-        <div className="w-full md:w-1/2 lg:w-1/3  ty-subtitle">
-          I build web experiences with a strong focus on usability, consistency, and clean
-          implementation.
+        </FadeUp>
+
+        <div className="relative w-1/4 aspect-3/4 md:w-1/5 lg:w-1/3">
+          <Image
+            src="/images/heroImage.png"
+            alt="Hero"
+            fill
+            className="object-cover -z-10"
+            priority
+          />
         </div>
       </section>
 

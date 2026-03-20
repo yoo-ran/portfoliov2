@@ -15,65 +15,62 @@ export default function Hero() {
   };
 
   return (
-    <section className="flexCol gap-y-10 w-full h-svh dark:bg-black">
-      <div className="flexCol w-full  gap-y-2">
-        <FadeUp>
-          <h1 className="font-title  font-black uppercase  text-start leading-none text-[3.6rem] md:text-[7.7rem] lg:text-[10rem] ">
-            Yooran <br />
-            Kim
-          </h1>
-        </FadeUp>
-        <div className="w-full md:w-5/8 lg:w-full flexRow lg:items-end">
-          <ul className="w-1/2">
+    <section className="flexCol gap-y-10 w-10/12 self-center h-svh dark:bg-black">
+      <div className="flexRow w-full">
+        <div className="w-full md:w-5/8 lg:w-full flexCol items-center space-y-16 ">
+          <FadeUp>
+            <h1 className="font-logo font-black text-center tracking-wide  leading-none text-[3.6rem] md:text-[7.7rem] lg:text-[12rem] ">
+              Yooran Kim
+            </h1>
+          </FadeUp>
+          <ul className="w-2/3 text-center ">
             <FadeUp>
-              <li className="font-label text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-1 xl:mb-2">
+              <li className="font-label text-2xl md:text-3xl lg:text-5xl xl:text-5xl font-bold lg:mb-4">
                 Full-Stack Developer
               </li>
-            </FadeUp>
-            <FadeUp>
               <li className="text-[0.75rem] md:text-[0.875rem] lg:text-[1.25rem] xl:text-[1.5rem]">
-                I <strong>translate product goals into usable interfaces</strong> by
-                simplifying UX, designing clear flows, building reusable components, and
-                delivering stable integrations.
+                I translate product goals into usable interfaces by simplifying UX,
+                designing clear flows, building reusable components, and delivering stable
+                integrations.
               </li>
             </FadeUp>
           </ul>
+        </div>
 
+        {/* <div className="relative w-1/4 md:w-1/3 lg:w-1/4 xl:w-1/4 aspect-3/4 ">
           <FadeUp>
-            <div className="relative w-1/4 md:w-1/3 lg:w-1/5 xl:w-1/4 aspect-3/4 ">
-              <Image
-                src="/images/hero.png"
-                alt="Hero"
-                fill
-                className="object-cover -z-10"
-                priority
-              />
-            </div>
-          </FadeUp>
-        </div>
-
-        <div className="flexRow items-end w-full">
-          <div>
-            <ContactBtn label="Copy Email" icon={Copy} onClick={copyEmail} />
-            <ContactBtn
-              label="LinkedIn"
-              icon={Linkedin}
-              href="https://www.linkedin.com/in/your-handle"
-              target="_blank"
+            <Image
+              src="/images/heroImage.png"
+              alt="Hero"
+              fill
+              className="object-cover -z-10"
+              priority
             />
-          </div>
-          <ul className="flexCol items-end uppercase">
-            <li className="font-label text-[0.875rem] md:text-[1.125rem] lg:text-[1.5rem] xl:text-[2rem] leading-none">
-              Available for
-            </li>
-            <li className="flexRow lg:gap-x-3">
-              <Blink>
-                <p className="text-highlight lg:text-xl mt-2">●</p>
-              </Blink>
-              <p className="ty-header-title leading-none">work</p>
-            </li>
-          </ul>
+          </FadeUp>
+        </div> */}
+      </div>
+
+      <div className="flexRow items-end w-full">
+        <div>
+          <ContactBtn label="Copy Email" icon={Copy} onClick={copyEmail} />
+          <ContactBtn
+            label="LinkedIn"
+            icon={Linkedin}
+            href="https://www.linkedin.com/in/your-handle"
+            target="_blank"
+          />
         </div>
+        <ul className="flexCol items-end uppercase">
+          <li className="font-label text-[0.875rem] md:text-[1.125rem] lg:text-[1.5rem] xl:text-[2rem] leading-none">
+            Available for
+          </li>
+          <li className="flexRow lg:gap-x-3">
+            <Blink>
+              <p className="text-highlight lg:text-xl mt-2">●</p>
+            </Blink>
+            <p className="ty-header-title leading-none">work</p>
+          </li>
+        </ul>
       </div>
     </section>
   );
