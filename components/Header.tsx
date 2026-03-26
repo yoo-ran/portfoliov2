@@ -26,7 +26,13 @@ export default function Header({ menuOpen, onToggleMenu }: HeaderProps) {
     px-4 py-1 xl:px-4 xl:py-3
     backdrop-blur-md"
     >
-      <p className="font-logo font-bold italic text-md md:text-xl lg:text-2xl">YR</p>
+      <Link
+        key={'/'}
+        href={'/'}
+        className="font-logo font-bold italic text-md md:text-xl lg:text-2xl hover:text-highlight"
+      >
+        YR
+      </Link>
       {/* Desktop nav */}
       <nav className="hidden md:flex gap-x-2 lg:gap-x-2 uppercase  ">
         {NAV.map((item) => {

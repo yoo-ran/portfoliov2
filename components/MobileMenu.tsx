@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Link from 'next/link';
 
 type MobileMenuProps = {
   open: boolean;
@@ -8,9 +9,9 @@ type MobileMenuProps = {
 };
 
 const LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Projects', href: '/projects' },
 ];
 
 export default function MobileMenu({ open, onClose }: MobileMenuProps) {
@@ -55,7 +56,9 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
         `}
       >
         <div className="flexRow w-full">
-          <span className="font-semibold font-logo text-2xl">YR</span>
+          <Link href={'/'} className="font-semibold font-logo text-2xl">
+            YR
+          </Link>
           <button
             id="closeBtn"
             onClick={onClose}
@@ -68,14 +71,14 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
 
         <nav className=" flexCol gap-3 h-full">
           {LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="uppercase ty-header-title font-black hover:underline"
               onClick={onClose}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
