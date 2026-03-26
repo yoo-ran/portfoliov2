@@ -27,7 +27,7 @@ export default function ContactBtn({
     bg-black text-beige ty-button
     dark:bg-beige dark:text-black
     hover:cursor-pointer
-    hover:bg-highlight hover:text-black
+    hover:bg-beige hover:text-black
     dark:hover:bg-highlight dark:hover:text-black
   `;
 

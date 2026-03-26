@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -18,6 +19,43 @@ export function generateStaticParams() {
   return PROJECT_DETAILS.map((project) => ({
     slug: project.slug,
   }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
+
+  if (!project) {
+    return {
+      title: 'Project Not Found',
+      description: 'The requested project could not be found.',
+    };
+  }
+
+  return {
+    title: project.title,
+    description: project.summary,
+    alternates: {
+      canonical: `/projects/${project.slug}`,
+    },
+    openGraph: {
+      title: `${project.title} | Yooran Kim`,
+      description: project.summary,
+      url: `/projects/${project.slug}`,
+      images: [
+        {
+          url: project.heroImage,
+          alt: `${project.title} preview image`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${project.title} | Yooran Kim`,
+      description: project.summary,
+      images: [project.heroImage],
+    },
+  };
 }
 
 export default async function ProjectDetailPage({ params }: Props) {

@@ -36,18 +36,6 @@ export default function Hero() {
             </FadeUp>
           </ul>
         </div>
-
-        {/* <div className="relative w-1/4 md:w-1/3 lg:w-1/4 xl:w-1/4 aspect-3/4 ">
-          <FadeUp>
-            <Image
-              src="/images/heroImage.png"
-              alt="Hero"
-              fill
-              className="object-cover -z-10"
-              priority
-            />
-          </FadeUp>
-        </div> */}
       </div>
 
       <div className="flexRow items-end w-full">
