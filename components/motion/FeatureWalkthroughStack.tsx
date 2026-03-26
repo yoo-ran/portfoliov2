@@ -32,9 +32,9 @@ function DemoCard({ item }: { item: FeatureDemoItem }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
-      className="grid items-center gap-x-16 gap-y-6 rounded-3xl border bg-black p-5 md:grid-cols-2 lg:min-h-[30rem]"
+      className="grid items-center gap-x-16 gap-y-6 rounded-3xl border bg-black p-5 md:grid-cols-2 md:min-h-[24rem] lg:min-h-[30rem]"
     >
-      <div className="flex justify-center rounded-2xl lg:min-h-[24rem] lg:max-h-[28rem] w-full ">
+      <div className="flex justify-center rounded-2xl md:h-full lg:min-h-[24rem] lg:max-h-[28rem] w-full aspect-4/3 ">
         {item.mediaType === 'video' ? (
           <DemoVideo youtubeId={item.youtubeId} title={item.title} />
         ) : (
@@ -102,7 +102,7 @@ function MobileAccordion({ items }: Props) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="grid gap-3 md:hidden">
+    <div className="grid gap-3 w-full md:hidden">
       {items.map((item, index) => {
         const isActive = index === activeIndex;
 

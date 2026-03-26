@@ -9,10 +9,10 @@ type Props = {
 
 export default function MoreAboutMeCard({ icon: TitleIcon, title, items }: Props) {
   return (
-    <div className="flexCol gap-y-3 xl:gap-y-6 w-full bg-black p-4 rounded-sm md:p-5 lg:p-6 xl:p-8 md:rounded-md lg:rounded-lg">
+    <div className="flexCol justify-start gap-y-3 xl:gap-y-6 w-full bg-black p-4 rounded-sm md:p-5 lg:p-6 xl:p-8 md:rounded-md lg:rounded-lg">
       <div className="flexRow gap-x-2">
         <TitleIcon className="border rounded-sm p-1 text-white" />
-        <p className="capitalize ty-h3 text-white">{title}</p>
+        <h3 className="capitalize ty-h3 text-white">{title}</h3>
       </div>
 
       <ul className="flexCol gap-y-1 xl:gap-y-2 text-white pl-1">

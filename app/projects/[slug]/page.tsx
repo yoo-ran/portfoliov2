@@ -83,7 +83,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         <section id="overview" className="grid gap-10 md:grid-cols-2 lg:items-start">
           <div className="flexCol gap-y-6">
             <div>
-              <p className="ty-tech-btn opacity-70 mb-1 md:m-0">
+              <p className="ty-tech-btn opacity-70 mb-1 md:-mb-1">
                 {project.meta.teamType} · {project.meta.platform} ·{' '}
                 {project.meta.timeline}
               </p>
@@ -128,7 +128,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-3xl border w-full h-full">
+          <div className="relative overflow-hidden rounded-3xl border w-full aspect-6/3 md:h-full lg:h-full">
             <Image
               src={project.heroImage}
               alt={`${project.title} hero image`}
@@ -212,7 +212,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             {project.technicalDecisions.map((item) => (
               <article
                 key={item.title}
-                className="rounded-xl border md:p-4 lg:p-6 lg:h-full bg-black text-beige"
+                className="rounded-xl border p-4 lg:p-6 lg:h-full bg-black text-beige"
               >
                 <div className="flexRow justify-start gap-2 ">
                   <item.icon className="w-5" />
@@ -229,7 +229,7 @@ export default async function ProjectDetailPage({ params }: Props) {
       <Reveal>
         <section id="challenges" className="space-y-6">
           <h2 className="ty-h2 font-semibold">Challenges & Solutions</h2>
-          <div className="space-y-5 md:space-y-4 grid md:grid-cols-2 md:gap-3">
+          <div className="space-y-5 md:space-y-4 grid md:grid-cols-2 gap-y-4 md:gap-3">
             {project.challenges.map((item) => (
               <article key={item.title} className="rounded-3xl border p-6 h-full md:p-5">
                 <div className="flexRow justify-start gap-2">
@@ -261,9 +261,9 @@ export default async function ProjectDetailPage({ params }: Props) {
       <Reveal>
         <section id="impacts" className="space-y-6">
           <h2 className="ty-h2 font-semibold">Impacts</h2>
-          <div className="grid gap-5 md:gap-3 lg:grid-cols-3">
+          <div className="grid gap-y-4 gap-6 md:gap-3 lg:grid-cols-3">
             {project.impact.map((item) => (
-              <article key={item.label} className="rounded-xl border lg:p-6 md:p-4">
+              <article key={item.label} className="rounded-xl border lg:p-6 p-4">
                 <div className="flexRow justify-start gap-x-2">
                   <item.icon />
                   <h3 className="ty-h3">{item.label}</h3>
@@ -278,7 +278,7 @@ export default async function ProjectDetailPage({ params }: Props) {
       </Reveal>
       <section id="product-walkthrough" className="space-y-6 w-full">
         <h2 className="ty-h2 font-semibold">Product Walkthrough</h2>
-        <div className=" ">
+        <div className="w-full">
           <FeatureWalkthroughStack items={project.featureDemos} />
         </div>
       </section>

@@ -15,20 +15,20 @@ export default function Hero() {
   };
 
   return (
-    <section className="flexCol gap-y-10 w-10/12 self-center h-svh dark:bg-black">
-      <div className="flexRow w-full">
-        <div className="w-full md:w-5/8 lg:w-full flexCol items-center space-y-16 ">
+    <section className="flexCol gap-y-12 lg:gap-y-10 w-10/12 self-center h-[24rem] md:h-[34rem] lg:h-svh dark:bg-black">
+      <div className="flexCol w-full">
+        <div className="w-full flexCol items-center space-y-8 lg:space-y-16 ">
           <FadeUp>
-            <h1 className="font-logo font-black text-center tracking-wide  leading-none text-[3.6rem] md:text-[7.7rem] lg:text-[12rem] ">
+            <h1 className="font-logo font-black text-center tracking-wide  leading-none text-[3.6rem] md:text-[6rem] lg:text-[12rem] ">
               Yooran Kim
             </h1>
+            <p className="font-label text-center text-xl md:text-2xl lg:text-5xl xl:text-5xl font-bold lg:mb-4">
+              Full-Stack Developer
+            </p>
           </FadeUp>
-          <ul className="w-2/3 text-center ">
+          <ul className="lg:w-2/3 text-center ">
             <FadeUp>
-              <li className="font-label text-2xl md:text-3xl lg:text-5xl xl:text-5xl font-bold lg:mb-4">
-                Full-Stack Developer
-              </li>
-              <li className="text-[0.75rem] md:text-[0.875rem] lg:text-[1.25rem] xl:text-[1.5rem]">
+              <li className="ty-body1 leading-5 md:leading-6 lg:text-[1.25rem] xl:text-[1.5rem]">
                 I translate product goals into usable interfaces by simplifying UX,
                 designing clear flows, building reusable components, and delivering stable
                 integrations.
@@ -52,9 +52,9 @@ export default function Hero() {
           <li className="font-label text-[0.875rem] md:text-[1.125rem] lg:text-[1.5rem] xl:text-[2rem] leading-none">
             Available for
           </li>
-          <li className="flexRow lg:gap-x-3">
+          <li className="flexRow gap-x-1 lg:gap-x-3">
             <Blink>
-              <p className="text-highlight lg:text-xl mt-2">●</p>
+              <p className="text-highlight text-sm lg:text-xl mt-1 lg:mt-2">●</p>
             </Blink>
             <p className="ty-header-title leading-none">work</p>
           </li>

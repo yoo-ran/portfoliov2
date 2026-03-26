@@ -10,7 +10,7 @@ type Props = {
 
 export default function ProjectCard({ project }: Props) {
   return (
-    <div className="flexCol justify-between gap-y-4 w-full h-full bg-black p-4 text-beige rounded-sm md:rounded-md lg:rounded-lg lg:p-5 xl:p-6 lg:gap-y-5 dark:border-beige">
+    <div className="flexCol justify-start gap-y-4 w-full h-full bg-black p-4 text-beige rounded-sm md:rounded-md lg:rounded-lg lg:p-5 xl:p-6 lg:gap-y-5 dark:border-beige">
       <div className="relative w-full aspect-16/9">
         <Image
           src={project.image}
@@ -19,14 +19,14 @@ export default function ProjectCard({ project }: Props) {
           className="object-cover object-top rounded-md"
         />
       </div>
-      <div className=" w-full h-1/3 flexCol justify-start gap-y-2">
+      <div className=" w-full lg:h-1/3 flexCol justify-start gap-y-4 lg:gap-y-2">
         <div className="flexCol  gap-y-1">
-          <p className="ty-h3 leading-none">{project.title}</p>
-          <span className="ty-tech-btn italic">
+          <h3 className="ty-h3 leading-none">{project.title}</h3>
+          <span className="ty-body2 italic">
             {project.type} Project · {project.platform}
           </span>
         </div>
-        <p className="ty-body2">{project.description}</p>
+        <p className="ty-body1">{project.description}</p>
         <div className="w-full flexRow flex-wrap justify-start gap-1 mt-4">
           {project.techStacks.map((tech, idx) => (
             <TechChip key={`${project.title}-${tech.label}-${idx}`} item={tech} />

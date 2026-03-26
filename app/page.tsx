@@ -47,8 +47,8 @@ export default function Home() {
         <Reveal>
           <div className="flexCol gap-y-2 md:gap-y-4 lg:gap-y-6 xl:gap-y-8 w-full">
             <h2 className="ty-h2">Projects</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-4 w-full">
-              <div className="col-span-2 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+              <div className="lg:col-span-2 w-full">
                 {/* project[0] */}
                 <FeaturedProject project={featured} />
               </div>

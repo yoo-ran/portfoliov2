@@ -12,8 +12,8 @@ type Props = {
 export default function FeaturedProject({ project }: Props) {
   return (
     <div className="flexCol justify-start gap-y-4 w-full h-full bg-black p-4 text-beige rounded-sm md:rounded-md lg:rounded-lg lg:p-6 xl:p-7 xl:gap-y-5 dark:border-beige">
-      <div className="w-full flexCol justify-between gap-4 lg:gap-x-10">
-        <div className="flexRow items-start gap-x-3">
+      <div className="w-full flexCol justify-between gap-2 lg:gap-x-10">
+        <div className="flexCol lg:flex-row items-start gap-y-4 lg:gap-x-3">
           <div className="relative w-full lg:w-1/2 aspect-16/9">
             <Image
               src={project.image}
@@ -22,10 +22,10 @@ export default function FeaturedProject({ project }: Props) {
               className="object-cover object-top rounded-md"
             />
           </div>
-          <div className="flexCol gap-6 lg:w-1/2">
+          <div className="flexCol gap-y-4 lg:gap-6 lg:w-1/2">
             <div className="flexCol  gap-y-1">
               <p className="ty-h2 leading-none">{project.title}</p>
-              <span className="ty-tech-btn italic ">
+              <span className="ty-body2 italic ">
                 {project.type} Project · {project.platform}
               </span>
             </div>
@@ -39,7 +39,7 @@ export default function FeaturedProject({ project }: Props) {
         </div>
 
         <div className=" w-fullflexCol justify-start gap-y-2 lg:gap-y-4">
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <p className="ty-h3">Highlights</p>
             <ul className="flexCol lg:gap-y-1 list-disc ml-4 ty-body1 lg:mt-3">
               <li>

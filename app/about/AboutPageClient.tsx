@@ -15,28 +15,33 @@ import Image from 'next/image';
 
 export default function AboutPageClient() {
   return (
-    <main className="flexCol gap-y-14 lg:gap-y-30 xl:gap-y-26 w-10/12 mx-auto py-36">
+    <main className="flexCol gap-y-14 lg:gap-y-30 xl:gap-y-26 w-10/12  mx-auto py-36">
       {/* HERO SECTION */}
-      <section className="flexRow gap-y-4 w-10/12 self-center">
+      <section className="flexRow gap-x-4 lg:w-10/12 self-center">
         <FadeUp>
           <div className="flexCol w-full space-y-6">
-            <div>
-              <p className="ty-header lg:text-[5rem] leading-none">
-                Hi, my name is
+            <div className="flexCol gap-y-2">
+              <p className="ty-header text-[2rem] md:text-[3rem] lg:text-[5rem] leading-none">
+                Hi, my name
               </p>
-              <h1 className="font-logo font-bold leading-none ty-header lg:text-[5rem]">
-                Yooran
-              </h1>
+              <div className="flexRow justify-start gap-x-2 md:gap-x-3">
+                <p className="ty-header text-[2rem] md:text-[3rem] lg:text-[5rem] leading-none">
+                  is
+                </p>
+                <h1 className="font-logo font-bold leading-none ty-header text-[3rem] md:text-[4rem] lg:text-[5rem]">
+                  Yooran
+                </h1>
+              </div>
             </div>
 
-            <div className="w-full md:w-2/3 ty-subtitle">
+            <div className="w-full md:w-3/4 ty-subtitle">
               I’m a full-stack developer who builds web experiences with a strong focus on
               usability, consistency, and clean implementation.
             </div>
           </div>
         </FadeUp>
 
-        <div className="relative w-1/4 aspect-3/4 md:w-1/5 lg:w-1/3">
+        <div className="relative w-1/2 aspect-3/4 md:w-1/3 lg:w-1/3">
           <Image
             src="/images/heroImage.png"
             alt="Portrait illustration of Yooran Kim"

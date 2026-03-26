@@ -41,14 +41,14 @@ export default function ProjectsPageClient() {
           <p className="text-center ty-subtitle leading-none">Portfolio</p>
           <h1 className="text-center uppercase ty-header-title leading-none">Projects</h1>
         </div>
-        <div className="ty-body2 text-center w-full">
+        <div className="ty-body2 text-center w-full md:w-2/3 self-center">
           Explore full-stack and front-end projects I built, featuring responsive UI,
           backend integration, data handling, and scalable web application workflows.
         </div>
       </section>
 
-      <section className="flexRow gap-x-4 justify-center w-full">
-        <SlidersHorizontal className="w-4" />
+      <section className="flexRow gap-x-4 items-start md:items-center justify-center w-full">
+        <SlidersHorizontal className="size-8 md:size-6 lg:size-4" />
 
         <div className="flex flex-wrap gap-2">
           <FilterChip
