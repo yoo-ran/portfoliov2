@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { Project } from '@/lib/projects/projects-data';
 
 import TechChip from './ui/TechChip';
