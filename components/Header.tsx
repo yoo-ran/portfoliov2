@@ -10,6 +10,11 @@ type HeaderProps = {
   onToggleMenu: () => void;
 };
 
+function normalizePath(path: string) {
+  if (path === '/') return '/';
+  return path.endsWith('/') ? path.slice(0, -1) : path;
+}
+
 export default function Header({ menuOpen, onToggleMenu }: HeaderProps) {
   const pathname = usePathname();
 
@@ -31,7 +36,7 @@ export default function Header({ menuOpen, onToggleMenu }: HeaderProps) {
       {/* Desktop nav */}
       <nav className="hidden md:flex gap-x-2 xl:gap-x-3 uppercase  ">
         {NAV.map((item) => {
-          const active = pathname === item.href;
+          const active = normalizePath(pathname) === normalizePath(item.href);
 
           return (
             <Link
