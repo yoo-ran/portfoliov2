@@ -15,7 +15,7 @@ export default function MoreAboutMeCard({ icon: TitleIcon, title, items }: Props
         <h3 className="capitalize ty-h3 text-white">{title}</h3>
       </div>
 
-      <ul className="flexCol gap-y-1 xl:gap-y-2 text-white pl-1">
+      <ul className="flexCol gap-y-1 xl:gap-y-4 text-white pl-1">
         {items.map((content, idx) => (
           <li key={idx} className="flexRow gap-x-3">
             <TitleIcon className="w-4 h-4" />

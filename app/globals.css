@@ -193,22 +193,22 @@
     --text-h2: 2.25rem; /* 48px */
     --leading-h2: 2.25rem; /* 56px */
 
-    --text-h3: 1.5rem; /* 28px */
+    --text-h3: 2rem; /* 28px */
     --leading-h3: 2rem; /* 36px */
 
-    --text-subtitle: 1.25rem; /* 24px */
+    --text-subtitle: 1.5rem; /* 24px */
     --leading-subtitle: 1.75rem; /* 30px */
 
-    --text-body1: 1.125rem; /* 18px */
-    --leading-body1: 1.5rem; /* 30px */
+    --text-body1: 1.25rem; /* 18px */
+    --leading-body1: 1.75rem; /* 30px */
 
-    --text-body2: 1rem; /* 16px */
+    --text-body2: 1.125rem; /* 16px */
     --leading-body2: 1.25rem; /* 26px */
 
-    --text-button: 2rem; /* 20px */
+    --text-button: 1.8rem; /* 20px */
     --leading-button: 1.25rem; /* 20px */
 
-    --text-tech-btn: 0.85rem; /* 12px */
+    --text-tech-btn: 1rem; /* 12px */
     --leading-tech-btn: 1.375rem; /* 22px */
   }
 }

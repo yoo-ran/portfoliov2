@@ -21,7 +21,7 @@ export default function TechChip({
 
   return (
     <div
-      className={`flexRow gap-x-0.5 rounded-sm border p-1 md:py-0 lg:px-1.5 bg-beige/70 dark:bg-black ${borderColor}`}
+      className={`flexRow gap-x-0.5 rounded-sm border p-1 md:py-0 lg:px-1.5 xl:px-2 xl:py-1.5 bg-beige/70 dark:bg-black ${borderColor}`}
     >
       <div className="relative aspect-square w-4">
         {isLucide ? (

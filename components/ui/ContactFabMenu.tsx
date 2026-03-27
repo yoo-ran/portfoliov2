@@ -43,11 +43,11 @@ export function ContactFabMenu() {
             whileTap={{ scale: 0.92 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
             className={`fab-item rounded-full
-        p-2 md:p-3 lg:p-3 xl:p-5
+        p-2 md:p-3 lg:p-3 xl:p-4
         shadow-sm/50
         ${isLast ? 'bg-black' : 'bg-highlight'}`}
           >
-            <Icon className="text-beige w-4 h-4 md:w-6 md:h-6 lg:w-5 lg:h-5 xl:w-10 xl:h-10" />
+            <Icon className="text-beige size-4 md:size-6 lg:size-5 xl:size-8" />
           </motion.a>
         );
       })}

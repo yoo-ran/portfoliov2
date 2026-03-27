@@ -32,9 +32,9 @@ function DemoCard({ item }: { item: FeatureDemoItem }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
-      className="grid items-center gap-x-16 gap-y-6 rounded-3xl border bg-black p-5 md:grid-cols-2 md:min-h-[24rem] lg:min-h-[30rem]"
+      className="grid items-center gap-x-16 gap-y-6 rounded-3xl border bg-black p-5  xl:p-10 md:grid-cols-2 md:min-h-[24rem] lg:min-h-[30rem] xl:min-h-[36rem]"
     >
-      <div className="flex justify-center rounded-2xl md:h-full lg:min-h-[24rem] lg:max-h-[28rem] w-full aspect-4/3 ">
+      <div className="flex justify-center rounded-2xl md:h-full w-full aspect-4/3 ">
         {item.mediaType === 'video' ? (
           <DemoVideo youtubeId={item.youtubeId} title={item.title} />
         ) : (
@@ -46,10 +46,10 @@ function DemoCard({ item }: { item: FeatureDemoItem }) {
         )}
       </div>
 
-      <div className="flexCol gap-y-4 text-beige ">
-        <h3 className="ty-body1 lg:text-lg font-bold">{item.title}</h3>
+      <div className="flexCol gap-y-4 xl:gap-y-8 text-beige ">
+        <h3 className="ty-h3 font-bold">{item.title}</h3>
         <p className="ty-body1 opacity-80">{item.caption}</p>
-        <ul className="space-y-2">
+        <ul className="space-y-2 xl:space-y-4">
           {item.points.map((point) => (
             <li key={point} className="ty-body2 opacity-80">
               • {point}
@@ -75,7 +75,7 @@ function DesktopTabs({ items }: Props) {
               key={item.title}
               type="button"
               onClick={() => setActiveIndex(index)}
-              className={`rounded-full border px-4 py-2 ty-body2 transition cursor-pointer ${
+              className={`rounded-full border px-4 py-2 xl:px-5 xl:py-4 ty-body2 transition cursor-pointer ${
                 isActive
                   ? 'bg-black text-beige border-black'
                   : 'bg-transparent text-black/70 border-black/20 hover:border-black/40 hover:text-black'
@@ -87,7 +87,7 @@ function DesktopTabs({ items }: Props) {
         })}
       </div>
 
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-5xl xl:max-w-6xl">
         <AnimatePresence mode="wait">
           <motion.div key={items[activeIndex].title}>
             <DemoCard item={items[activeIndex]} />

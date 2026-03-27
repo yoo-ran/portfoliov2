@@ -11,9 +11,9 @@ type Props = {
 
 export default function FeaturedProject({ project }: Props) {
   return (
-    <div className="flexCol justify-start gap-y-4 w-full h-full bg-black p-4 text-beige rounded-sm md:rounded-md lg:rounded-lg lg:p-6 xl:p-7 xl:gap-y-5 dark:border-beige">
-      <div className="w-full flexCol justify-between gap-2 lg:gap-x-10">
-        <div className="flexCol lg:flex-row items-start gap-y-4 lg:gap-x-3">
+    <div className="flexCol justify-start gap-y-4 w-full bg-black p-4 text-beige rounded-sm md:rounded-md lg:rounded-lg lg:p-6 xl:p-7 xl:gap-y-5 dark:border-beige">
+      <div className="w-full flexCol justify-between gap-2 lg:gap-y-10 xl:gap-y-10">
+        <div className="flexCol lg:flex-row items-start gap-y-4 lg:gap-x-6 xl:gap-x-8">
           <div className="relative w-full lg:w-1/2 aspect-16/9">
             <Image
               src={project.image}
@@ -38,28 +38,28 @@ export default function FeaturedProject({ project }: Props) {
           </div>
         </div>
 
-        <div className=" w-fullflexCol justify-start gap-y-2 lg:gap-y-4">
-          <div className="hidden lg:block">
-            <p className="ty-h3">Highlights</p>
-            <ul className="flexCol lg:gap-y-1 list-disc ml-4 ty-body1 lg:mt-3">
-              <li>
-                Implemented secure authentication and session flow for protected
-                account-based access
-              </li>
-              <li>
-                Built property upload and edit features with CRUD functionality, making
-                listing management more efficient
-              </li>
-              <li>
-                Added Excel import and AG Grid integration to reduce repetitive manual
-                entry for large datasets
-              </li>
-            </ul>
-          </div>
+        <div className=" w-fullflexCol justify-start gap-y-2 lg:gap-y-6 hidden lg:block">
+          <p className="ty-h3">Highlights</p>
+          <ul className="flexCol lg:gap-y-1 xl:gap-y-2 list-disc ml-4 ty-body1 lg:mt-3">
+            <li>
+              Implemented secure authentication and session flow for protected
+              account-based access
+            </li>
+            <li>
+              Built property upload and edit features with CRUD functionality, making
+              listing management more efficient
+            </li>
+            <li>
+              Added Excel import and AG Grid integration to reduce repetitive manual entry
+              for large datasets
+            </li>
+          </ul>
         </div>
       </div>
-      <div className="flexRow justify-end gap-x-2 border-t-2 w-full pt-3 lg:pt-6 lg:mt-4">
-        <LinkChip links={project.links} />
+      <div className="flexRow justify-end border-t-2 w-full pt-3 lg:pt-6 lg:mt-4">
+        <div className="lg:w-1/2 grid grid-cols-2 gap-x-2 ">
+          <LinkChip links={project.links} />
+        </div>
       </div>
     </div>
   );

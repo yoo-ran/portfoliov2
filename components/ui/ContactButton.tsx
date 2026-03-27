@@ -22,7 +22,7 @@ export default function ContactBtn({
 }: Props) {
   const base = `
     inline-flex items-center justify-center gap-2
-    px-5 py-1 md:px-6 md:py-2 lg:px-7 lg:py-3 xl:px-12 xl:py-6
+    px-5 py-1 md:px-6 md:py-2 lg:px-7 lg:py-3 xl:px-10 xl:py-6
     border-2 rounded-sm md:rounded-md
     bg-black text-beige ty-button
     dark:bg-beige dark:text-black

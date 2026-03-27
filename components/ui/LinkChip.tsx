@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
+
 type Props = {
   links: {
     github?: string;
@@ -8,28 +9,47 @@ type Props = {
 };
 
 export default function LinkChip({ links }: Props) {
+  const items = [
+    links.github && {
+      label: 'GitHub',
+      href: links.github,
+      isExternal: true,
+    },
+    links.detail && {
+      label: 'View Detail',
+      href: `/projects/${links.detail}`,
+      isExternal: false,
+    },
+  ].filter(Boolean) as {
+    label: string;
+    href: string;
+    isExternal: boolean;
+  }[];
+
   return (
     <>
-      {links.github && (
-        <a
-          href={links.github}
-          rel="noopener noreferrer"
-          className="flexRow justify-center py-1.5 pl-5 pr-3 lg:py-1 lg:pl-5 lg:pr-3 border rounded-sm hover:bg-black hover:text-white transition"
-        >
-          <p className="ty-body2 capitalize ">github</p>
-          <ChevronRight className="w-4 h-4  " />
-        </a>
-      )}
-
-      {links.detail && (
-        <Link
-          href={`/projects/${links.detail}`}
-          rel="noopener noreferrer"
-          className="flexRow justify-center py-1.5 pl-5 pr-3 lg:py-1 lg:pl-5 lg:pr-3 border rounded-sm hover:bg-black hover:text-white transition"
-        >
-          <p className="ty-body2 capitalize ">View Detail</p>
-          <ChevronRight className="w-4 h-4  " />
-        </Link>
+      {items.map((item) =>
+        item.isExternal ? (
+          <a
+            key={item.label}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flexRow xl:gap-x-3 border rounded-sm px-2 py-1 md:px-3 md:py-1.5 xl:px-4 xl:py-3  hover:bg-beige hover:text-black transition"
+          >
+            <p className="ty-body2 capitalize">{item.label}</p>
+            <ChevronRight className="w-4 h-4" />
+          </a>
+        ) : (
+          <Link
+            key={item.label}
+            href={item.href}
+            className="flexRow xl:gap-x-3 border rounded-sm px-2 py-1 md:px-3 md:py-1.5 xl:px-4 xl:py-3  hover:bg-beige hover:text-black transition"
+          >
+            <p className="ty-body2 capitalize">{item.label}</p>
+            <ChevronRight className="w-4 h-4" />
+          </Link>
+        ),
       )}
     </>
   );

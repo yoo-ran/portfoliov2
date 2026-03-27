@@ -57,7 +57,7 @@ export default function ProjectSubmenu({ items }: Props) {
                   <li key={item.id}>
                     <a
                       href={`#${item.id}`}
-                      className="whitespace-nowrap ty-subtitle md:text-sm lg:text-base hover:border-b"
+                      className="whitespace-nowrap ty-subtitle md:text-sm lg:text-base xl:text-lg hover:border-b"
                     >
                       {item.label}
                     </a>

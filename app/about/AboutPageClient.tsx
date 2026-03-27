@@ -19,7 +19,7 @@ export default function AboutPageClient() {
       {/* HERO SECTION */}
       <section className="flexRow gap-x-4 lg:w-10/12 self-center">
         <FadeUp>
-          <div className="flexCol w-full space-y-6">
+          <div className="flexCol w-full space-y-6 xl:space-y-8">
             <div className="flexCol gap-y-2">
               <p className="ty-header text-[2rem] md:text-[3rem] lg:text-[5rem] leading-none">
                 Hi, my name
@@ -59,7 +59,7 @@ export default function AboutPageClient() {
             <p className="bg-black w-3 h-3"></p>
             <h2 className="ty-h2 capitalize">Bio</h2>
           </div>
-          <div className="ty-body1 w-full md:w-2/3">
+          <div className="ty-body1 w-full md:w-2/3 xl:leading-8">
             I’m a full-stack developer focused on building digital experiences that are
             clear, functional, and thoughtfully crafted. I enjoy working across both
             frontend and backend, from creating intuitive interfaces to building reliable

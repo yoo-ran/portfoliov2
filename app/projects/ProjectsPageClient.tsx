@@ -35,20 +35,20 @@ export default function ProjectsPageClient() {
   const clearAll = () => setSelectedTech([]);
 
   return (
-    <main className="flexCol gap-y-14 lg:gap-y-22 xl:gap-y-26 w-full py-36">
+    <main className="flexCol gap-y-14 lg:gap-y-16 xl:gap-y-20 w-full py-36">
       <section className="flexCol gap-y-4 w-full">
         <div className="w-full">
           <p className="text-center ty-subtitle leading-none">Portfolio</p>
           <h1 className="text-center uppercase ty-header-title leading-none">Projects</h1>
         </div>
-        <div className="ty-body2 text-center w-full md:w-2/3 self-center">
+        <div className="ty-body2 text-center w-full md:w-2/3 lg:w-1/2 self-center xl:leading-7">
           Explore full-stack and front-end projects I built, featuring responsive UI,
           backend integration, data handling, and scalable web application workflows.
         </div>
       </section>
 
-      <section className="flexRow gap-x-4 items-start md:items-center justify-center w-full">
-        <SlidersHorizontal className="size-8 md:size-6 lg:size-4" />
+      <section className="flexRow gap-x-4 items-start lg:items-center justify-center w-full">
+        <SlidersHorizontal className="size-8 md:size-5 lg:size-4 xl:size-6" />
 
         <div className="flex flex-wrap gap-2">
           <FilterChip

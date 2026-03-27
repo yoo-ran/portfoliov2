@@ -163,13 +163,13 @@ export default async function ProjectDetailPage({ params }: Props) {
         </section>
       </Reveal>
       <Reveal>
-        <section id="contributions" className="space-y-6 lg:space-y-8">
+        <section id="contributions" className="space-y-6 lg:space-y-8 xl:space-y-10">
           <h2 className="ty-h2 font-semibold">My Contributions</h2>
-          <div className="grid gap-3 lg:gap-3 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-3 lg:gap-3 md:grid-cols-2 lg:grid-cols-2">
             {project.contributions.map((item) => (
               <article
                 key={item.title}
-                className="rounded-xl border p-6 bg-black text-beige"
+                className="rounded-xl border p-6 lg:p-8 bg-black text-beige"
               >
                 <div className="flexRow justify-start gap-2 ">
                   <item.icon className="w-5" />
@@ -183,9 +183,9 @@ export default async function ProjectDetailPage({ params }: Props) {
           </div>
         </section>
       </Reveal>
-      <section id="workflows" className="space-y-6 lg:space-y-8 w-full">
+      <section id="workflows" className="space-y-6 lg:space-y-8 xl:space-y-10 w-full">
         <h2 className="ty-h2 font-semibold">Key Workflows</h2>
-        <div className="grid lg:gap-5 gap-3 lg:grid-cols-3">
+        <div className="grid  gap-3 lg:grid-cols-3">
           {project.workflows.map((workflow) => (
             <Reveal>
               <article
@@ -206,9 +206,9 @@ export default async function ProjectDetailPage({ params }: Props) {
         </div>
       </section>
       <Reveal>
-        <section id="technical-decisions" className="space-y-6">
+        <section id="technical-decisions" className="space-y-6 lg:space-y-8 xl:space-y-10">
           <h2 className="ty-h2 font-semibold">Technical Decisions</h2>
-          <div className="space-y-4 grid lg:grid-cols-3 lg:gap-5">
+          <div className="space-y-4 grid lg:grid-cols-3 lg:gap-3">
             {project.technicalDecisions.map((item) => (
               <article
                 key={item.title}
@@ -227,17 +227,20 @@ export default async function ProjectDetailPage({ params }: Props) {
         </section>
       </Reveal>
       <Reveal>
-        <section id="challenges" className="space-y-6">
+        <section id="challenges" className="space-y-6 lg:space-y-8 xl:space-y-10">
           <h2 className="ty-h2 font-semibold">Challenges & Solutions</h2>
           <div className="space-y-5 md:space-y-4 grid md:grid-cols-2 gap-y-4 md:gap-3">
             {project.challenges.map((item) => (
-              <article key={item.title} className="rounded-3xl border p-6 h-full md:p-5">
+              <article
+                key={item.title}
+                className="rounded-3xl border p-6 h-full md:p-5 xl:p-7"
+              >
                 <div className="flexRow justify-start gap-2">
                   <item.icon />
                   <h3 className="ty-h3">{item.title}</h3>
                 </div>
 
-                <div className="mt-5 space-y-4">
+                <div className="mt-5 space-y-4 xl:space-y-8">
                   <div>
                     <p className="ty-body2 font-medium opacity-60">Problem</p>
                     <p className="ty-body1 mt-1 opacity-90">{item.problem}</p>
@@ -259,24 +262,25 @@ export default async function ProjectDetailPage({ params }: Props) {
         </section>
       </Reveal>
       <Reveal>
-        <section id="impacts" className="space-y-6">
+        <section id="impacts" className="space-y-6 lg:space-y-8 xl:space-y-10">
           <h2 className="ty-h2 font-semibold">Impacts</h2>
           <div className="grid gap-y-4 gap-6 md:gap-3 lg:grid-cols-3">
             {project.impact.map((item) => (
-              <article key={item.label} className="rounded-xl border lg:p-6 p-4">
+              <article
+                key={item.label}
+                className="rounded-xl border lg:p-6 p-4 space-y-3 xl:space-y-6"
+              >
                 <div className="flexRow justify-start gap-x-2">
                   <item.icon />
                   <h3 className="ty-h3">{item.label}</h3>
                 </div>
-                <p className="ty-body1 mt-3 lg:leading-8 opacity-80">
-                  {item.description}
-                </p>
+                <p className="ty-body1 lg:leading-8 opacity-80">{item.description}</p>
               </article>
             ))}
           </div>
         </section>
       </Reveal>
-      <section id="product-walkthrough" className="space-y-6 w-full">
+      <section id="product-walkthrough" className="space-y-6 xl:space-y-10 w-full">
         <h2 className="ty-h2 font-semibold">Product Walkthrough</h2>
         <div className="w-full">
           <FeatureWalkthroughStack items={project.featureDemos} />

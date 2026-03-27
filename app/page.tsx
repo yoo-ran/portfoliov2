@@ -36,7 +36,7 @@ export default function Home() {
           __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
         }}
       />
-      <section className="flexCol gap-y-12 w-full dark:bg-black mt-16">
+      <section className="flexCol gap-y-12 xl:gap-y-24 w-full dark:bg-black mt-16">
         <Hero />
         <Reveal>
           <div className="flexCol gap-y-2 md:gap-y-4 lg:gap-y-6 xl:gap-y-8 w-full">

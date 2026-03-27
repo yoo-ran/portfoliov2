@@ -31,7 +31,7 @@ export default function Projects({ selectedTech = [], startIndex = 0, limit }: P
   }
 
   return (
-    <div className="grid w-full grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid w-full lg:w-9/12 self-center grid-cols-1 gap-3 lg:gap-x-4 xl:gap-x-6 md:grid-cols-2 ">
       {sliced.map((project) => (
         <ProjectCard key={project.title} project={project} />
       ))}
