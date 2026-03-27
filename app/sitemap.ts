@@ -1,26 +1,20 @@
 import type { MetadataRoute } from 'next';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://yoorankim.com';
+export const dynamic = 'force-static';
 
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: `${baseUrl}/`,
+      url: 'https://yoorankim.com',
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
     },
     {
-      url: `${baseUrl}/projects`,
+      url: 'https://yoorankim.com/about',
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
     },
     {
-      url: `${baseUrl}/about`,
+      url: 'https://yoorankim.com/projects',
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
     },
   ];
 }
