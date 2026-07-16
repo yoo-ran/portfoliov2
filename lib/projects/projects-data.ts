@@ -62,4 +62,24 @@ export const PROJECTS: Project[] = [
       detail: 'dej-app',
     },
   },
+  {
+    image: '/images/projects/postcard-store/postcard-store.png',
+    slug: 'postcard-store',
+    title: 'Postcard Store',
+    type: 'Individual',
+    platform: 'Full-stack Web App',
+    description:
+      'An e-commerce platform for original photography postcards, featuring Stripe checkout, AI-powered recommendations, and an automated CI/CD pipeline with end-to-end testing.',
+    techStacks: [
+      { image: '/images/techStacks/nextjs.png', label: 'Next.js' },
+      { image: '/images/techStacks/typescript.png', label: 'TypeScript' },
+      { image: '/images/techStacks/prisma.png', label: 'Prisma' },
+      { image: '/images/techStacks/postgresql.png', label: 'PostgreSQL' },
+      { image: '/images/techStacks/stripe.png', label: 'Stripe' },
+    ],
+    links: {
+      github: 'https://github.com/yoo-ran/postcard-store',
+      detail: 'postcard-store',
+    },
+  },
 ];

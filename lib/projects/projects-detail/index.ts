@@ -1,8 +1,13 @@
 import { dejAppDetail } from './dej-app';
 import { goldenKeyDetail } from './golden-key';
+import { postcardStoreDetail } from './postcard-store';
 import { ProjectDetail } from './types';
 
-export const PROJECT_DETAILS: ProjectDetail[] = [goldenKeyDetail, dejAppDetail];
+export const PROJECT_DETAILS: ProjectDetail[] = [
+  goldenKeyDetail,
+  dejAppDetail,
+  postcardStoreDetail,
+];
 
 export function getProjectBySlug(slug: string) {
   return PROJECT_DETAILS.find((project) => project.slug === slug);
@@ -11,3 +16,4 @@ export function getProjectBySlug(slug: string) {
 export * from './types';
 export * from './golden-key';
 export * from './dej-app';
+export * from './postcard-store';
