@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    image: '/images/projects/postcard-store/postcard-store.png',
+    image: '/images/projects/postcard-store/postcard-store.jpg',
     slug: 'postcard-store',
     title: 'Postcard Store',
     type: 'Individual',
