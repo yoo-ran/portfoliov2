@@ -71,7 +71,7 @@ export const PROJECTS: Project[] = [
     description:
       'An e-commerce platform for original photography postcards, featuring Stripe checkout, AI-powered recommendations, and an automated CI/CD pipeline with end-to-end testing.',
     techStacks: [
-      { image: '/images/techStacks/nextjs.png', label: 'Next.js' },
+      { image: '/images/techStacks/nextjs.svg', label: 'Next.js' },
       { image: '/images/techStacks/typescript.png', label: 'TypeScript' },
       { image: '/images/techStacks/prisma.png', label: 'Prisma' },
       { image: '/images/techStacks/postgresql.png', label: 'PostgreSQL' },
